@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a5d52be292.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./static/css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+<!--===========Nav Bar=================-->
+<section class="nav-bar">
+    <div class="logo">ViajAR</div>
+    <ul class="logos">
+        <li>
+        <a href="https://www.facebook.com/"> <img src="./img/Logos/facebook.svg" alt="Facebook" width="75"
+                height="50"></a>
+        <a href="https://github.com/"> <img src="./img/Logos/github.svg" alt="GitHub" width="75" height="50"></a>
+        <a href="https://www.instagram.com/"> <img src="./img/Logos/square-instagram.svg" alt="Instagram" width="75"
+                height="50"></a>
+        <a href="https://www.linkedin.com/"> <img src="./img/Logos/linkedin.svg" alt="Linkedin" width="75"
+                height="50"></a>
+        </li>
+    </ul>
+    <ul class="menu">
+        <li><a href="index">Inicio</a></li>
+        <li><a href="patagonia">Patagonia</a></li>
+        <li><a href="norte">Norte</a></li>
+        <li><a href="nosotros">Nosotros</a></li>
+        <li><a href="contacto">Contacto</a></li>
+    </ul>
+    </div>
+
+</section>
+    <section>
+        <div class="container">
+            <div class="form">
+                <form action="#">
+                    <h2>ViajAr</h2>
+                    <h2>Iniciar Sesión (Sin Terminar)</h2>
+                    <div class="input-container">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" name="email"required>
+                        <!-- <input type="text" placeholder="Correo" id="email" name="email" required> -->
+                        <label>Email</label>
+                    </div>
+                    <div class="input-container">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password" required>
+                        <!-- <input type="text" placeholder="Correo" id="email" name="email" required> -->
+                        <!-- <label for="#">Password</label> -->
+                        <label>Password</label>
+                    </div>
+
+                    <div class="olvidar">
+                        <!-- <label for="#"> -->
+                        <label>    
+                            <input type="checkbox">
+                            <a href="#">Olvidé la contraseña</a>
+                        </label>
+                    </div>
+                </form>
+                <div>
+                    <button onclick="guardarDatosL()">Acceder</button>
+                    <div class="registrar">
+                        <p>No tengo cuenta <a href="./register.html">Crear una</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===========Footer=================-->
+<section>
+    <div class="footer">
+        <div class="links">
+            <h3>Enlaces</h3>
+            <ul>
+                <li>Ofertas y Descuentos</li>
+                <li>Obten Beneficios Exclusivos</li>
+                <li > <a href="./contacto.html" class=""> Contáctanos</a></li>
+                <li>Nosotros</li>
+            </ul>
+        </div>
+        <div class="links">
+            <h3>Novedades</h3>
+            <ul>
+                <li>Eventos Exclusivos</li>
+                <li>Recuerdos Exclusivos</li>
+                <li>Servicios Premium</li>
+                <li>Recorridos Personalizados</li>
+            </ul>
+        </div>
+        <div class="links">
+            <h3>Ayuda</h3>
+            <ul>
+                <li>Preguntas Frecuentes</li>
+                <li>Reportar un Problema</li>
+                <li>Terminos y Condiciones</li>
+                <li>Politicas de Privacidad</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+    <script src="./static/js/register.js"></script>
+</body>
+</html>

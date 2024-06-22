@@ -1,0 +1,111 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos del formulario de registro */
+.registro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registro-form {
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.registro-imagen img {
+  max-width: 50%;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.registro-form h2 {
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+select[type="pais"] {
+  width: 105%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Media queries para diseño responsive */
+@media screen and (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .registro-container {
+    flex-direction: column-reverse;
+  }
+
+}

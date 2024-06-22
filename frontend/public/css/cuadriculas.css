@@ -1,0 +1,82 @@
+h1 {
+  color: #393232;
+  font-size: 2vw;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+h2 {
+  color: #0e0b0b;
+  font-size: 3vw;
+
+}
+
+p {
+  text-align: center;
+  margin: 15px;
+}
+
+.tour-item-detail-title {
+  /* color: rgb(11, 11, 11); */
+  color: #fff;
+  font-size: x-large;
+}
+
+.tour-item-detail-subtitle {
+  /* color: rgb(11,11,11); */
+  color: #fff;
+  font-size: large
+}
+
+.cuadricula {
+  /* height: 100%; */
+  padding: 1px;
+  grid-gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(470px, 1fr)); /* Utiliza un mínimo de 470px y máximo de 1fr (flexible) para las columnas */
+  justify-items: center;
+  display: grid; /* grid layout */
+}
+
+.item {
+  background: #303350;
+  color: rgb(14, 14, 14);
+  padding: 1em;
+  max-width: 470px; 
+  width: 100%; 
+  margin-bottom: 20px; 
+
+}
+
+.item img {
+  width: 100%; 
+  height: auto; 
+}
+
+/* 
+.btn-info {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-info:hover {
+  background-color: #555;
+} */
+
+
+@media screen and (min-width: 357px) and (max-width: 991px) {
+  .cuadricula {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+  
+  .item {
+    max-width: none;
+  }
+}

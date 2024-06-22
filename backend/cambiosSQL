@@ -1,0 +1,5 @@
+ALTER TABLE `viajar2024`.`usuarios`
+ADD COLUMN `password` VARCHAR(8) NOT NULL AFTER `updatedAt`,
+CHANGE COLUMN `nombre` `nombre` VARCHAR(45) CHARACTER SET 'utf8mb3' NOT NULL,
+CHANGE COLUMN `apellido` `apellido` VARCHAR(45) CHARACTER SET 'utf8mb3' NOT NULL,
+CHANGE COLUMN `mail` `mail` VARCHAR(45) NOT NULL;

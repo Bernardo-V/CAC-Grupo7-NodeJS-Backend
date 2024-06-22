@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="../js/index.js"></script>  <!-- Asegúrate de que la ruta sea correcta -->
+    <title>ViajAR</title>
+</head>
+
+<body>
+    <!--===========Nav Bar=================-->
+    <section class="nav-bar">
+        <div class="logo">ViajAR</div>
+        <ul class="logos">
+            <li>
+            <a href="https://www.facebook.com/"> <img src="./img/Logos/facebook.svg" alt="Facebook" width="75"
+                    height="50"></a>
+            <a href="https://github.com/"> <img src="./img/Logos/github.svg" alt="GitHub" width="75" height="50"></a>
+            <a href="https://www.instagram.com/"> <img src="./img/Logos/square-instagram.svg" alt="Instagram" width="75"
+                    height="50"></a>
+            <a href="https://www.linkedin.com/"> <img src="./img/Logos/linkedin.svg" alt="Linkedin" width="75"
+                    height="50"></a>
+            </li>
+        </ul>
+        <ul class="menu">
+            <li><a href="index">Inicio</a></li>
+            <li><a href="patagonia">Patagonia</a></li>
+            <li><a href="norte">Norte</a></li>
+            <li><a href="nosotros">Nosotros</a></li>
+            <li><a href="contacto">Contacto</a></li>
+        </ul>
+    </section>
+
+    <!--===============Banner================-->
+    <section class="banner">
+        <div class="sky">
+            <img class="plane" src="./img/VUELOS.png" alt="">
+        </div>
+        <div class="banner-text-item">
+            <div class="banner-heading">
+                <h1>Encuentra tu Próxima Aventura</h1>
+            </div>
+            <form class="form">
+                <input type="text" list="mylist" placeholder="¿A donde quieres ir?">
+                <datalist id="mylist">
+                    <option>Cataratas del Iguazú</option>
+                    <option>Bariloche</option>
+                    <option>Glaciar Perito Moreno</option>
+                    <option>C.A.B.A</option>
+                    <option>Andes</option>
+                    <option>Mar del Plata</option>
+                    <option>Otro</option>
+                </datalist>
+                <input type="date" class="date">
+                <a href="#" class="book">Ir</a>
+            </form>
+        </div>
+    </section>
+
+    <!--==============Places===================-->
+    <section class="places">
+        <div class="places-text">
+            <small>Paquetes Turisticos</small>
+            <h2>Lugares Favoritos</h2>
+        </div>
+
+        <div class="cards">
+            <div id="paquetesContainer" class="paquetes-container">
+                <!-- Aquí se insertarán las tarjetas de paquetes -->
+            </div>
+        </div>
+    </section>
+
+
+<!--===========Footer=================-->
+    <footer class="footer">
+        <div class=" links">
+        <h3>Enlaces</h3>
+        <ul>
+            <li > <a href="./contacto.html" class=""> Contáctanos</a></li>
+            <li><a href="./nosotros.html">Nosotros</a></li>
+        </ul>
+        </div>
+       
+    </footer>
+</body>
+</html>
