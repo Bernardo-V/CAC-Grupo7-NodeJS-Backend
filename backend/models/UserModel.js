@@ -1,5 +1,7 @@
 const db = require ("../data/bd.js")
-const {DataTypes} = require ("sequelize")
+const { DataTypes } = require("sequelize")
+const bcrypt = require('bcrypt');
+
 
 const UsuarioModel = db.define ("usuarios",{
   idusuarios: {
@@ -22,7 +24,7 @@ const UsuarioModel = db.define ("usuarios",{
     unique: true // Asegura que el correo electrónico sea único
   },
   password: {
-    type: DataTypes.STRING(8),
+    type: DataTypes.STRING(60), // Ajusta la longitud según tus necesidades
     allowNull: false,
   },
   createdAt: {
@@ -40,6 +42,20 @@ const UsuarioModel = db.define ("usuarios",{
 }, {
   tableName: 'usuarios',
   timestamps: true // Habilita automáticamente los campos createdAt y updatedAt
-});
+},
+  {
+    hooks: {
+      beforeCreate: async (user) => {
+        const saltRounds = 10;
+        user.password = await bcrypt.hash(user.password, saltRounds);
+      },
+      beforeUpdate: async (user) => {
+        if (user.changed('password')) {
+          const saltRounds = 10;
+          user.password = await bcrypt.hash(user.password, saltRounds);
+        }
+      }
+    }
+  });
 
 module.exports = UsuarioModel

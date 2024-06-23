@@ -6,9 +6,10 @@ const validationForm = (event) => {
     const firtsname = document.querySelector('#firstname');
     const lastname = document.querySelector('#lastname');
     const email = document.querySelector('#email');
-    const country = document.querySelector('#country');
-    const image = document.querySelector('#image');
+    // const country = document.querySelector('#country');
+    // const image = document.querySelector('#image');
     const message = document.querySelector('#message');
+
     // Seleccionar todos los radio buttons con el nombre "year"
     const yearInputs = document.querySelectorAll('input[name="year"]');
 
@@ -45,13 +46,13 @@ const validationForm = (event) => {
          popup.style.display = 'block'; // Muestra el popup
          setTimeout(() => {
              popup.style.display = 'none'; // Oculta el popup después de un tiempo
-         }, 3000); 
+         }, 4000); 
           // Borrar todos los campos del formulario
-        firstname.value = '';
+        firtsname.value = '';
         lastname.value = '';
         email.value = '';
-        country.value = '';
-        image.value = '';
+        // country.value = '';
+        // image.value = '';
         message.value = '';
             // Desmarcar todos los radio buttons con el nombre "year"
         yearInputs.forEach(input => {

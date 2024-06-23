@@ -1,160 +1,242 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Quicksand&display=swap" rel="stylesheet">
-    <!-- ANIMATE CSS -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
-    <!-- FONT AWESOME -->
-    <script src="https://kit.fontawesome.com/a5d52be292.js" crossorigin="anonymous"></script>
-    <!-- ESTILO CSS -->
-   
-    <link rel="stylesheet" href="./css/contacto.css">
-    <!-- FAVINCON -->
-    <link rel="viajAR icon" href="./static/Logos/contacto.ico" type="image/x-icon">
-    
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacto</title>
+        <!-- GOOGLE FONTS -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Quicksand&display=swap"
+            rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a5d52be292.js"
+            crossorigin="anonymous"></script>
 
-<body>
- <!--===========Nav Bar=================-->
- <section class="nav-bar">
-    <div class="logo">ViajAR</div>
-    <ul class="logos">
-        <li>
-        <a href="https://www.facebook.com/"> <img src="./img/Logos/facebook.svg" alt="Facebook" width="75"
-                height="50"></a>
-        <a href="https://github.com/"> <img src="./img/Logos/github.svg" alt="GitHub" width="75" height="50"></a>
-        <a href="https://www.instagram.com/"> <img src="./img/Logos/square-instagram.svg" alt="Instagram" width="75"
-                height="50"></a>
-        <a href="https://www.linkedin.com/"> <img src="./img/Logos/linkedin.svg" alt="Linkedin" width="75"
-                height="50"></a>
-        </li>
-    </ul>
-    <ul class="menu">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="patagonia">Patagonia</a></li>
-        <li><a href="norte">Norte</a></li>
-        <li><a href="nosotros">Nosotros</a></li>
-        <li><a href="contacto">Contacto</a></li>
-    </ul>
-</section>
+        <link
+            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            rel="stylesheet" id="bootstrap-css">
+        <script
+            src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- ESTILO CSS -->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
 
-    <main>
-        <!--=============Contacto==================-->
-        <!-- elemento define la sección en un documento. -->
-        <section class="form-wrapper">
-            <div class="parte1">
-                <h2>Contacto</h2>
-                <form id="formRegister" method="POST" action="#">
-                    <div class="form-control">
-                        <input type="text" name="firstname" id="firstname" placeholder="Nombre">
-                    </div>
-                    <div class="error" id="error-firstname"></div>
-                    <div class="form-control">
-                        <input type="text" name="lastname" id="lastname" placeholder="Apellido">
-                    </div>
-                    <div class="error" id="error-lastname"></div>
-                    <div class="form-control">
-                        <input type="email" name="email" id="email" placeholder="Email">
-                    </div>
-                    <div class="error" id="error-email"></div>
+        <link rel="stylesheet" href="./css/contact.css">
+        <!-- FAVINCON -->
 
-                    <div class="form-control">
-                        <select name="country" id="country" class="form-select">
-                            <option value="">País</option>
-                            <option value="AR">Argentina</option>
-                            <option value="BO">Bolivia</option>
-                            <option value="BR">Brasil</option>
-                            <option value="CH">Chile</option>
-                            <option value="CO">Colombia</option>
-                            <option value="EC">Ecuador</option>
-                            <option value="PY">Paraguay</option>
-                            <option value="PE">Perú</option>
-                            <option value="UY">Uruguay</option>
-                            <option value="VE">Venezuela</option>
-                        </select>
-                    </div>
+    </head>
 
-                   <br>
-                   
-                    <div class="form-radio">
-                            <a>Año de Viaje:</a>
-                            <div class="">
-                                <input type="radio" id="2024" name="year" value="2024">
-                                <label for="2024">2024</label>
-                            </div>
-                            <div class="">
-                                <input type="radio" id="2025" name="year" value="2025">
-                                <label for="2025">2025</label>
-                            </div>
-                            <div class="">
-                                <input type="radio" id="2026" name="year" value="2026">
-                                <label for="2026">2026</label>
-                            </div>
-                    </div>
-                    <div class="form-control">
-                        <p style="font-size: 14px; color: #fff;">Por favor, adjunte una imagen relacionada con su viaje.</p>
-                        <input type="file" id="image" name="image" accept="image/*">
-                    </div>
-                    <br>
-                    <div class="error" id="error-affair"></div>
-                    <div class="form-control">
-                        <textarea id="message" name="message" rows="3">Escriba su mensaje aquí</textarea>
-                    </div>
-                    <div class="error" id="error-message"></div>
-                    <div class="button">
-                        <button type="submit">Enviar</button>
-                    </div>
+    <body>
+        <!--===========Nav Bar=================-->
+        <section class="nav-bar">
+            <nav class="navbar navbar-expand-sm">
+                <div class="logo">ViajAR</div>
+                <button class="navbar-toggler" type="button"
+                    data-toggle="collapse"
+                    data-target="#navbar-list-2" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <div id="popup" class="popup">
-                        <div id="popup-content" class="popup-content">
-                         
-                        </div>
-                            <h2>Gracias por su consulta</h2>
-                            <div class="content">
-                                El formulario ha sido enviado.
-                            </div>
-                    </div>
-                      
-                </form>
-            </div>
-            <div class="parte2">
-                <h3>Más información</h3>
-                <ul class="sin-marcadores">
-                    <li><i class="fa-solid fa-location-dot"></i>Balcarce 78, C1064 CABA
-                    <div class="iframe">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13135.383983241743!2d-58.3702778!3d-34.6080556!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352cbe276f75%3A0xe16921ef0545f86d!2sCasa%20Rosada!5e0!3m2!1ses!2sar!4v1697363530494!5m2!1ses!2sar"
-                            width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </li>
-                    <li><i class="fa-solid fa-phone"></i>11-1111-1111</li>
-                    <li><i class="fa-solid fa-envelope-open-text"></i>viajAr@viajAr.com</li>
-                </ul>
-                <p>En ViajAr, estamos comprometidos en brindarte una experiencia única y memorable mientras exploras las
-                    maravillas de Argentina.</p>
-                <p>Ya sea que estés planeando una aventura en la majestuosa Patagonia, un recorrido cultural por las
-                    ciudades del noroeste o un viaje de ensueño a través de las regiones vitivinícolas, estamos aquí
-                    para hacer que tu viaje sea inolvidable.</p>
-                <p>Si tienes preguntas, comentarios o deseas obtener más información sobre nuestros emocionantes
-                    paquetes turísticos, no dudes en ponerte en contacto con nosotros. Estamos disponibles para atender
-                    tus consultas y ayudarte a planificar tu próxima escapada.</p>
-                <p>No dudes en contactarnos y comenzar a convertir tus sueños de viajar en realidad con ViajAr.
-                    ¡Esperamos tener noticias tuyas pronto!</p>
-                <h2>ViajAr.com</h2>
-            </div>
+                <div class="collapse navbar-collapse " id="navbar-list-2">
+                    <ul class="logos">
+                        <li>
+                            <a href="https://www.facebook.com/"> <img
+                                    src="./img/Logos/facebook.svg"
+                                    alt="Facebook" width="75"
+                                    height="50"></a>
+                            <a href="https://www.instagram.com/"> <img
+                                    src="./img/Logos/square-instagram.svg"
+                                    alt="Instagram"
+                                    width="75"
+                                    height="50"></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <!-- <i class="fa fa-home"></i> -->
+                                Inicio</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/patagonia">
+                                <!-- <i class="fa fa-mountain"></i> -->
+                                Patagonia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/norte">
+                                <!-- <i class="fa fa-horse"></i> -->
+                                Norte</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="/contacto">
+                                <!-- <i class="fa fa-address-card"></i> -->
+                                Contacto</a></li>
+                    </ul>
+                    <ul class="nav-item-right">
+                        <li class="nav-item">
+                            <!-- <a class="nav-link btn btn-info" -->
+                            <a class="nav-link btn "
+                                style="background-color: #e59b54;color: white;"
+                                href="/login">
+                                <i class="fa fa-user-circle-o"></i> | Iniciar
+                                Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </section>
-    </main>
-   
 
-    <script src="./js/validation-contacto.js"></script>
+        <main>
+            <section id="contact">
 
-</body>
+                <div class="container">
+                    <!-- <h2>Contact Us</h2> -->
+                    <p>En ViajAr, estamos comprometidos en brindarte una
+                        experiencia única y memorable mientras exploras las
+                        maravillas de Argentina. Ya sea que estés planeando una
+                        aventura en la majestuosa
+                        Patagonia, un recorrido cultural por las
+                        ciudades del noroeste o un viaje de ensueño a través de
+                        las regiones vitivinícolas, estamos aquí
+                        para hacer que tu viaje sea inolvidable.</p>
+                    <p>Si tienes preguntas, comentarios o deseas obtener más
+                        información sobre nuestros emocionantes
+                        paquetes turísticos, no dudes en ponerte en contacto con
+                        nosotros. Estamos disponibles para atender
+                        tus consultas y ayudarte a planificar tu próxima
+                        escapada.</p>
+                </div>
 
-</html>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="contact-info">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+
+                                <div class="contact-info-content">
+                                    <h4>Address</h4><ul class="sin-marcadores">
+                                        <li>
+                                            <p><i
+                                                    class="fa-solid fa-location-dot"></i>Balcarce
+                                                78,
+                                                C1064 CABA </p>
+                                            <div class="iframe">
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13135.383983241743!2d-58.3702778!3d-34.6080556!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352cbe276f75%3A0xe16921ef0545f86d!2sCasa%20Rosada!5e0!3m2!1ses!2sar!4v1697363530494!5m2!1ses!2sar"
+                                                    width="300" height="225"
+                                                    style="border:0;"
+                                                    allowfullscreen
+                                                    loading="lazy"
+                                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                        </li>
+
+                                    </div>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+
+                                    <div class="contact-info-content">
+                                        <h4>Phone</h4>
+                                        <p>221-457-2321</p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-info-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+
+                                    <div class="contact-info-content">
+                                        <h4>Email</h4>
+                                        <p>viajAr@viajAr.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-form">
+                                <form id="formRegister" method="POST"
+                                    action="#">
+                                    <div class="input-box">
+                                        <input type="text" required="true"
+                                            name="firstname"
+                                            id="firstname">
+                                        <span>Nombre</span>
+                                    </div>
+                                    <div class="error"
+                                        id="error-firstname"></div>
+                                    <div class="input-box">
+                                        <input type="text" name="lastname"
+                                            required="true"
+                                            id="lastname">
+                                        <span>Apellido</span>
+                                    </div>
+                                    <div class="error"
+                                        id="error-lastname"></div>
+                                    <div class="input-box">
+                                        <input type="email" required="true"
+                                            name="email"
+                                            id="email">
+                                        <span>Email</span>
+                                    </div>
+                                    <div class="error"
+                                        id="error-email"></div>
+                                    <div class="input-box">
+                                        <textarea required="true"
+                                            id="message"
+                                            name="message"
+                                            name></textarea>
+                                        <span>Escriba su mensaje aquí</span>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <input type="submit" value="Send" name>
+                                    </div>
+                                    <div id="popup" class="popup">
+                                        <div class="modal-body">
+                                            <h1
+                                                class="text-center text-uppercase">
+                                                Gracias por su consulta</h1>
+                                            <div class="row">
+                                                <div
+                                                    class="col-sm-12 col-sm-offset-1">
+                                                    <p
+                                                        class="text-muted small text-center">
+                                                        Nos
+                                                        estaremos contactando
+                                                        con usted a la brevedad.
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="popup-content"
+                                                class="popup-content">
+
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+
+                <script src="../js/validation-contacto.js"></script>
+
+            </body>
+
+        </html>

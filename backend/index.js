@@ -2,13 +2,17 @@ const express = require("express");
 const app = express();
 const viajesRouter = require("./routes/paquetesRouter.js")
 const path = require('path');
+require('dotenv').config();
 
 const usuariosRouter = require("./routes/userRouter.js")
+const authenticate = require('./middleware/authenticate.js'); // Importa el middleware de autenticación
+
 
 const db = require ("./data/bd.js")
 
 
 const PORT = process.env.PORT || 3001;
+
 app.use("/viajes", viajesRouter)
 app.use ("/usuarios",usuariosRouter)
 
@@ -18,6 +22,28 @@ app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/index.html'));
+});
+
+app.get("/miperfil", authenticate.soloAdmin);
+
+
+
+app.get('/patagonia', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/patagonia.html'));
+});
+
+app.get('/norte', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/norte.html'));
+});
+app.get('/nosotros', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/nosotros.html'));
+});
+app.get('/contacto', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/contacto.html'));
+});
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/login.html'));
 });
 
 //conexion a la base de datos
