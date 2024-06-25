@@ -212,3 +212,11 @@ body{
     text-align: center;
     font-family: Tahoma, Arial, sans-serif;
   }
+
+/* Estilo para el desenfoque del contenedor de contacto */
+.blur-container {
+  filter: blur(3px);
+  pointer-events: none; /* Para evitar que los eventos lleguen al fondo desenfocado */
+}
+
+

@@ -42,11 +42,20 @@ const validationForm = (event) => {
      if(validation){
         //  formRegister.submit();
         //  alert('h');
-         const popup = document.querySelector('#popup');
-         popup.style.display = 'block'; // Muestra el popup
-         setTimeout(() => {
-             popup.style.display = 'none'; // Oculta el popup después de un tiempo
-         }, 4000); 
+        const popup = document.querySelector('#popup');
+        popup.style.display = 'block'; // Muestra el popup
+
+        // Agregar clase para desenfoque al contenedor de contacto
+        document.querySelector('#contact').classList.add('blur-container');
+
+        setTimeout(() => {
+            popup.style.display = 'none'; // Oculta el popup después de 4 segundos
+
+            // Quitar clase de desenfoque al contenedor de contacto
+            document.querySelector('#contact').classList.remove('blur-container');
+        }, 4000);
+     
+
           // Borrar todos los campos del formulario
         firtsname.value = '';
         lastname.value = '';
