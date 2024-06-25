@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const viajesRouter = require("./routes/paquetesRouter.js")
+// const viajesRouter = require("./routes/paquetesRouter.js")
 const path = require('path');
 require('dotenv').config();
 
@@ -13,7 +13,7 @@ const db = require ("./data/bd.js")
 
 const PORT = process.env.PORT || 3001;
 
-app.use("/viajes", viajesRouter)
+// app.use("/viajes", viajesRouter)
 app.use ("/usuarios",usuariosRouter)
 
 
