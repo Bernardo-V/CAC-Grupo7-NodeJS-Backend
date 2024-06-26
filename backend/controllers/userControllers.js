@@ -30,10 +30,21 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
     }
 }
   const crearUnUsuario= async (req,res)=>{
-  try {
+    try {
+      const user = await UserModel.findOne({ where: { mail: req.body.mail } });
+      console.log(user)
+        if (user) {
+            return res.status(404).json({ message: "Email existente" });
+      }
+      
     // Crear el paquete en la base de datos utilizando Sequelize
-    const nuevoPaquete = await  UserModel.create(req.body);
-    console.log(nuevoPaquete)
+    if (req.body.password ) {
+            const saltRounds = 5;
+            const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+            req.body.password = hashedPassword;
+        }
+    const nuevoUsuario = await UserModel.create(req.body);
+    console.log(nuevoUsuario)
     res.status(201).json(req.body); // Respondemos con el paquete creado y un código 201 (creado)
     } catch (error) {
         res.json({message:error.message}) 
@@ -86,7 +97,7 @@ const Login = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { user: userFound.email },
+      { id: userFound.idusuarios, email: userFound.email },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
     );
@@ -107,10 +118,6 @@ const Login = async (req, res) => {
   }
 };
  
-
-
-
-
 
 
 module.exports = {borrarUsuario, actualizarUsuario, crearUnUsuario, traerUsuarios,traerUnUsuario , Login}
