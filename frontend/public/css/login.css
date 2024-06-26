@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=sans-serif:wght@300&display=swap');
 
+.body{
+    background-image: "../img/Logos/paisaje.jpeg";
+}
 
 #textInformat {
     font-size: 15px;
