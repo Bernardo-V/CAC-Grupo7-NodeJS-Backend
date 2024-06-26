@@ -46,6 +46,10 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/login.html'));
 });
 
+app.get('/session', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/login.html'));
+});
+
 //conexion a la base de datos
 const conexionDB = async ()=>{
     try {

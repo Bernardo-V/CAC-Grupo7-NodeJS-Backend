@@ -1,137 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--                                PROPIOS DE INDEX                              -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="../js/index.js"></script>
+    <!--                                XXXXXXXXXXXXXXXX                              -->
+    <script
+      src="https://kit.fontawesome.com/a5d52be292.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>ViajAR</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <script src="../js/index.js"></script>
-        <script src="https://kit.fontawesome.com/a5d52be292.js"
-            crossorigin="anonymous"></script>
-        <link
-            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            rel="stylesheet" id="bootstrap-css">
-        <script
-            src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script
-            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <title>ViajAR</title>
-    </head>
+  <body>
+    <!--===========Nav Bar=================-->
+    <section class="nav-bar">
+      <nav class="navbar navbar-expand-sm">
+        <div class="logo">ViajAR</div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar-list-2"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <body>
-        <!--===========Nav Bar=================-->
-        <section class="nav-bar">
-            <nav class="navbar navbar-expand-sm">
-                <div class="logo">ViajAR</div>
-                <button class="navbar-toggler" type="button"
-                    data-toggle="collapse"
-                    data-target="#navbar-list-2" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div class="collapse navbar-collapse" id="navbar-list-2">
+          <ul class="logos">
+            <li>
+              <a href="https://www.facebook.com/">
+                <img
+                  src="./img/Logos/facebook.svg"
+                  alt="Facebook"
+                  width="75"
+                  height="50"
+              /></a>
+              <a href="https://www.instagram.com/">
+                <img
+                  src="./img/Logos/square-instagram.svg"
+                  alt="Instagram"
+                  width="75"
+                  height="50"
+              /></a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <!-- <i class="fa fa-home"></i> -->
+                Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patagonia">
+                <!-- <i class="fa fa-mountain"></i> -->
+                Patagonia</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/norte">
+                <!-- <i class="fa fa-horse"></i> -->
+                Norte</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacto">
+                <!-- <i class="fa fa-address-card"></i> -->
+                Contacto</a
+              >
+            </li>
+          </ul>
+          
+          
+          
+          <ul class="nav-item-right">
+                           
+            <li class="nav-item">
+              <!-- <a class="nav-link btn btn-info" -->
+              <a
+                class="nav-link btn"
+                style="background-color: #e59b54; color: white"
+                href="/login"
+              >
+                <i class="fa fa-user-circle-o"></i> | Iniciar Sesión
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <!--===============Banner================-->
+    <section class="banner">
+      <div class="sky">
+        <img class="plane" src="./img/VUELOS.png" alt />
+      </div>
+      <div class="banner-text-item">
+        <div class="banner-heading">
+          <h1>Encuentra tu Próxima Aventura</h1>
+        </div>
+        <form class="form">
+          <input type="text" list="mylist" placeholder="¿A donde quieres ir?" />
+          <datalist id="mylist">
+            <option>Cataratas del Iguazú</option>
+            <option>Bariloche</option>
+            <option>Glaciar Perito Moreno</option>
+            <option>C.A.B.A</option>
+            <option>Andes</option>
+            <option>Mar del Plata</option>
+            <option>Otro</option>
+          </datalist>
+          <!-- <input type="date" class="date"> -->
+          <a href="#" class="book">Ir</a>
+        </form>
+      </div>
+    </section>
 
-                <div class="collapse navbar-collapse " id="navbar-list-2">
-                    <ul class="logos">
-                        <li>
-                            <a href="https://www.facebook.com/"> <img
-                                    src="./img/Logos/facebook.svg"
-                                    alt="Facebook" width="75"
-                                    height="50"></a>
-                            <a href="https://www.instagram.com/"> <img
-                                    src="./img/Logos/square-instagram.svg"
-                                    alt="Instagram"
-                                    width="75"
-                                    height="50"></a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">
-                                <!-- <i class="fa fa-home"></i> -->
-                                Inicio</a>
+    <!--==============Places===================-->
+    <section class="places">
+      <div class="places-text">
+        <!-- <small>Paquetes Turisticos</small> -->
+        <h2>Paquetes Especiales</h2>
+      </div>
 
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/patagonia">
-                                <!-- <i class="fa fa-mountain"></i> -->
-                                Patagonia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/norte">
-                                <!-- <i class="fa fa-horse"></i> -->
-                                Norte</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link"
-                                href="/contacto">
-                                <!-- <i class="fa fa-address-card"></i> -->
-                                Contacto</a></li>
-                    </ul>
-                    <ul class="nav-item-right">
-                        <li class="nav-item">
-                            <!-- <a class="nav-link btn btn-info" -->
-                            <a class="nav-link btn "
-                                style="background-color: #e59b54;color: white;"
-                                href="/login">
-                                <i class="fa fa-user-circle-o"></i> | Iniciar
-                                Sesión
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </section>
-        <!--===============Banner================-->
-        <section class="banner">
-            <div class="sky">
-                <img class="plane" src="./img/VUELOS.png" alt>
-            </div>
-            <div class="banner-text-item">
-                <div class="banner-heading">
-                    <h1>Encuentra tu Próxima Aventura</h1>
-                </div>
-                <form class="form">
-                    <input type="text" list="mylist"
-                        placeholder="¿A donde quieres ir?">
-                    <datalist id="mylist">
-                        <option>Cataratas del Iguazú</option>
-                        <option>Bariloche</option>
-                        <option>Glaciar Perito Moreno</option>
-                        <option>C.A.B.A</option>
-                        <option>Andes</option>
-                        <option>Mar del Plata</option>
-                        <option>Otro</option>
-                    </datalist>
-                    <!-- <input type="date" class="date"> -->
-                    <a href="#" class="book">Ir</a>
-                </form>
-            </div>
-        </section>
+      <div class="cards">
+        <div id="paquetesContainer" class="paquetes-container">
+          <!-- Aquí se insertarán las tarjetas de paquetes -->
+        </div>
+      </div>
+    </section>
 
-        <!--==============Places===================-->
-        <section class="places">
-            <div class="places-text">
-                <!-- <small>Paquetes Turisticos</small> -->
-                <h2>Paquetes Especiales</h2>
-            </div>
-
-            <div class="cards">
-                <div id="paquetesContainer" class="paquetes-container">
-                    <!-- Aquí se insertarán las tarjetas de paquetes -->
-                </div>
-            </div>
-        </section>
-
-        <!--===========Footer=================-->
-        <footer class="footer">
-            <div class=" links">
-                <h3>Enlaces</h3>
-                <ul>
-                    <li> <a href="./contacto.html" class> Contáctanos</a></li>
-                    <li><a href="./nosotros.html">Nosotros</a></li>
-                </ul>
-            </div>
-
-        </footer>
-    </body>
+    <!--===========Footer=================-->
+    <footer class="footer">
+      <div class="links">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="./contacto.html" class> Contáctanos</a></li>
+          <li><a href="./nosotros.html">Nosotros</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>
