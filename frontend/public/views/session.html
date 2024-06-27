@@ -17,59 +17,54 @@
     <script
       src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
     <!-- para validar los campos del formulario. -->
-
+    <style>
+      
+    </style>
   </head>
   <body>
     <!--===========Nav Bar=================-->
     <section class="nav-bar">
       <nav class="navbar navbar-expand-sm">
-        <div class="logo">ViajAR</div>
+        <div class="logo" style="color: #52BFB7;">
+          <img src="../img/Logos/Logotipo2.png" width="50" height="50"
+            class="img-fluid" alt style="margin-right: 10px;">ViajAR
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
           data-target="#navbar-list-2" aria-controls="navbarNav"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse " id="navbar-list-2">
+        <div class="collapse navbar-collapse" id="navbar-list-2">
           <ul class="logos">
             <li>
-              <a href="https://www.facebook.com/"> <img
-                  src="./img/Logos/facebook.svg" alt="Facebook" width="75"
-                  height="50"></a>
-              <a href="https://www.instagram.com/"> <img
-                  src="./img/Logos/square-instagram.svg" alt="Instagram"
-                  width="75"
-                  height="50"></a>
+              <a href="https://www.facebook.com/">
+                <img src="./img/Logos/facebook.svg" alt="Facebook" width="75"
+                  height="50">
+              </a>
+              <a href="https://www.instagram.com/">
+                <img src="./img/Logos/square-instagram.svg" alt="Instagram"
+                  width="75" height="50">
+              </a>
             </li>
           </ul>
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">
-                <!-- <i class="fa fa-home"></i> -->
-                Inicio</a>
-
+              <a class="nav-link" href="/">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/patagonia">
-                <!-- <i class="fa fa-mountain"></i> -->
-                Patagonia</a>
+              <a class="nav-link" href="/patagonia">Patagonia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/norte">
-                <!-- <i class="fa fa-horse"></i> -->
-                Norte</a>
+              <a class="nav-link" href="/norte">Norte</a>
             </li>
-            <li class="nav-item"><a class="nav-link"
-                href="/contacto">
-                <!-- <i class="fa fa-address-card"></i> -->
-                Contacto</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacto">Contacto</a>
+            </li>
           </ul>
           <ul class="nav-item-right">
             <li class="nav-item">
-              <!-- <a class="nav-link btn btn-info" -->
-              <a class="nav-link btn "
-                style="background-color: #e59b54;color: white;"
-                href="/login">
+              <a class="nav-link btn"
+                style="background-color: #e59b54;color: white;" href="/login">
                 <i class="fa fa-user-circle-o"></i> | Iniciar Sesión
               </a>
             </li>
@@ -77,92 +72,74 @@
         </div>
       </nav>
     </section>
-
-    <!-- <div class="logo">ViajAR</div>
-      <ul class="logos">
-        <li>
-          <a href="https://www.facebook.com/"> <img
-              src="./img/Logos/facebook.svg" alt="Facebook" width="75"
-              height="50"></a>
-          <a href="https://www.instagram.com/"> <img
-              src="./img/Logos/square-instagram.svg" alt="Instagram" width="75"
-              height="50"></a>
-        </li>
-      </ul>
-      <ul class="menu">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/patagonia">Patagonia</a></li>
-        <li><a href="/norte">Norte</a></li> 
-        <li><a href="/nosotros">Nosotros</a></li> 
-        <li><a href="/contacto">Contacto</a></li>
-        <li><a
-            style="border-radius: 5%; border-color: black; background-color:rgba(91, 107, 107, 0.291);"
-            href="/login">Iniciar Sesion</a></li>
-      </ul> -->
-
+    <div class="blur-bg"></div>
     <section>
       <div class="container">
         <section class="vh-100">
           <div class="container-fluid h-custom">
+
             <div
               class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-md-9 col-lg-6 col-xl-5">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                  class="img-fluid" alt="Sample image">
-              </div>
-              <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form name="login">
-                  <div class="divider d-flex align-items-center my-4"></div>
 
+              <div class="card col-md-8 col-lg-6 col-xl-5">
+
+                <form name="login">
+                  <div
+                    class="divider form-outline mb-4 text-center position-relative">
+                    <img src="../img/Logos/planet.png" alt="Earth image"
+                      style="width: 100px; height: auto;"
+                      class="img-fluid rotating-earth">
+                    <img src="../img/Logos/airplane.png" alt="Airplane image"
+                      style="width: 50px; height: auto;  "
+                      class="img-fluid airplane">
+                  </div>
                   <!-- Email input -->
                   <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="email">Email</label>
                     <input type="email" name="email"
                       class="form-control form-control-lg" id="email"
-                      placeholder="Enter a valid email address">
-                    <div id="email-error" class="text-danger"></div>
+                      placeholder="Ingese email ">
+                    <div id="email-error" class="error"></div>
                   </div>
-
                   <!-- Password input -->
                   <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label" for="password">Contraseña</label>
+                    <label class="form-label"
+                      for="password">Contraseña</label>
                     <input type="password" name="password"
-                      class="form-control form-control-lg"
-                      placeholder="Enter password" />
-                    <div id="password-error" class="text-danger"></div>
+                      class="form-control form-control-lg password1"
+                      placeholder="Ingrese contraseña" id="contraseña" />
+                    <span
+                      class="fa fa-fw fa-eye password-icon show-password"></span>
+                    <div id="password-error" class="error"
+                      style="color: red;"></div>
                   </div>
-
                   <div
                     class="d-flex justify-content-between align-items-center">
                     <!-- Checkbox -->
                     <div class="form-check mb-0">
-                      <input class="form-check-input me-2" type="checkbox" value
+                      <input class="form-check-input me-2" type="checkbox"
+                        value
                         id />
-                      <label class="form-check-label"
-                        for>Remember me</label>
+                      <label class="form-check-label" for>Remember me</label>
                     </div>
-                    <a href="#!" class="text-body">Forgot password?</a>
+                    <a href="#!" class="text-body">Olvide mi contraseña</a>
                   </div>
-
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="submit" data-mdb-button-init
                       data-mdb-ripple-init class="btn btn-primary btn-lg"
                       style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an
-                      account? <a href="#!" class="link-danger">Register</a></p>
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Aún no tenes cuenta?
+                      <a href="/register"
+                        class="link-danger">Registrate!</a></p>
                   </div>
                 </form>
-
               </div>
             </div>
           </div>
-
         </section>
       </div>
     </section>
     <!--===========Footer=================-->
-
-    <script src="../js/login.js"></script>
+    <script src="../js/session.js"></script>
   </body>
 </html>
