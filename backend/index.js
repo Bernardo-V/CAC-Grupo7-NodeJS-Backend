@@ -16,17 +16,15 @@ const PORT = process.env.PORT || 3001;
 // app.use("/viajes", viajesRouter)
 app.use ("/usuarios",usuariosRouter)
 
-
-
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/index.html'));
 });
 
-app.get("/miperfil", authenticate.soloAdmin);
-
-
+app.get("/miperfil", authenticate.soloAdmin, (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/miperfil.html'));
+});
 
 app.get('/patagonia', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/patagonia.html'));
@@ -46,10 +44,13 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/login.html'));
 });
 
-app.get('/session', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/public/views/login.html'));
+app.get('/sesion', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/session.html'));
 });
 
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/register.html'));
+});
 //conexion a la base de datos
 const conexionDB = async ()=>{
     try {
