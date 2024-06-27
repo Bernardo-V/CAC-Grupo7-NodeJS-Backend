@@ -41,6 +41,10 @@ html {
 .navbar {
             box-shadow: 0 4px 4px rgba(0,0,0,0.1); /* Ajuste la sombra según sus preferencias */
         }
+        .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
  .nav-item-right {
             margin-left: auto; /* Move the item to the right */
         }
