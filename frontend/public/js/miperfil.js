@@ -1,30 +1,44 @@
-const apiUrl = 'http://localhost:3001';
- 
+
+// Función para decodificar el JWT
+function decodeJWT(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}
+
 // Función para obtener y mostrar datos del usuario
-async function datosUsuario(param) {
+async function datosUsuario() {
     try {
-        const response = await fetch(`/usuarios/miperfil`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
+        // Obtener el JWT desde las cookies
+        const jwtCookie = document.cookie.split('; ').find(cookie => cookie.startsWith('jwt=')).slice(4);
+        // Decodificar el JWT para obtener los datos
+        const decoded = decodeJWT(jwtCookie);
+        // Obtener el idusuarios del JWT decodificado
+        const idusuarios = decoded.id;
+        // Realiza la petición GET al servidor
+        $.ajax({
+            type: "GET",
+            url: `/usuarios/${idusuarios}`,
+            contentType: "application/json",
+            success: function (data) {
+                // Actualizar los campos en el formulario con los datos obtenidos del servidor
+                const nombre = document.getElementById('nombre');
+                nombre.value = data.nombre;
+                const apellido = document.getElementById('apellido');
+                apellido.value = data.apellido;
+                const email = document.getElementById('email');
+                email.value = data.mail;
             },
-            credentials: 'include' // Para enviar cookies con la solicitud
+            error: function (xhr, textStatus, errorThrown) {
+                console.error("Error en la solicitud:", xhr);
+            }
         });
-
-        const data = await response.json();
-        const nombre = document.getElementById('nombre');
-        nombre.value = data.nombre;
-        const apellido = document.getElementById('apellido');
-        apellido.value = data.apellido;
-        const email = document.getElementById('email');
-        email.value = data.mail;
-      
-        // data.forEach(user => {
-             console.log(data);
-        // });
-
-  } catch (error) {
-    console.error('Error al obtener los paquetes:', error);
+    } catch (error) {
+    console.error('Error al obtener los datos del usuario:');
   }
 }
 
@@ -62,8 +76,14 @@ async function enviarDatos(formData) {
         if (!formData.hasOwnProperty('nuevaContraseña')) {
             delete requestOptions.body.nuevaContraseña;
         }
+        // Obtener el JWT desde las cookies
+        const jwtCookie = document.cookie.split('; ').find(cookie => cookie.startsWith('jwt=')).slice(4);
+        // Decodificar el JWT para obtener los datos
+        const decoded = decodeJWT(jwtCookie);
+        // Obtener el idusuarios del JWT decodificado
+        const idusuario= decoded.id;
 
-        const response = await fetch(`/usuarios/7`, requestOptions);
+        const response = await fetch(`/usuarios/${idusuario}`, requestOptions);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -71,23 +91,14 @@ async function enviarDatos(formData) {
 
         const data = await response.json();
         console.log('Respuesta del servidor:', data);
-
-        // Actualizar los campos en el formulario con la respuesta del servidor (si es necesario)
-        // const nombreInput = document.getElementById('nombre');
-        // const apellidoInput = document.getElementById('apellido');
-        // const emailInput = document.getElementById('email');
-        // nombreInput.value = data.nombre;
-        // apellidoInput.value = data.apellido;
-        // emailInput.value = data.mail;
-
     } catch (error) {
         console.error('Error al enviar datos al servidor:', error);
     }
 }
 
-
-
+// Evento que se dispara al cargar la página
 window.addEventListener("load", function() {
+    datosUsuario();
 
             // icono para mostrar contraseña
             showPassword = document.querySelector('.show-password');
@@ -108,37 +119,8 @@ window.addEventListener("load", function() {
 
             })
 
+
 });
-        
-
-
-// // Función modificar un usuario
-// async function enviarDatos(param) {
-//     try {
-//       const response = await fetch(`/usuarios/7`, {
-//               method: 'put',
-//               headers: {
-//                 'Content-Type': 'application/json'
-//               },
-//             //   body: JSON.stringify(formData)
-//             });
-
-//         const data = await response.json();
-//         const nombre = document.getElementById('nombre');
-//         nombre.value = data.nombre;
-//         const apellido = document.getElementById('apellido');
-//         apellido.value = data.apellido;
-//         const email = document.getElementById('email');
-//         email.value = data.mail;
-      
-//         // data.forEach(user => {
-//              console.log(data);
-//         // });
-
-//   } catch (error) {
-//     console.error('Error al obtener los paquetes:', error);
-//   }
-// }
 
 
 // Llamar a la función para mostrar traer los datos
