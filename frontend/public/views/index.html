@@ -5,17 +5,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <script src="../js/index.js"></script>
-        <script src="https://kit.fontawesome.com/a5d52be292.js"
-            crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+       
         <link
             href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             rel="stylesheet" id="bootstrap-css">
-        <script
-            src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script
-            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title>ViajAR</title>
     </head>
 
@@ -35,11 +29,11 @@
                     <ul class="logos">
                         <li>
                             <a href="https://www.facebook.com/"> <img
-                                    src="./img/Logos/facebook.svg"
+                                    src="../img/Logos/facebook.svg"
                                     alt="Facebook" width="75"
                                     height="50"></a>
                             <a href="https://www.instagram.com/"> <img
-                                    src="./img/Logos/square-instagram.svg"
+                                    src="../img/Logos/square-instagram.svg"
                                     alt="Instagram"
                                     width="75"
                                     height="50"></a>
@@ -84,7 +78,7 @@
         <!--===============Banner================-->
         <section class="banner">
             <div class="sky">
-                <img class="plane" src="./img/VUELOS.png" alt>
+                <img class="plane" src="../img/VUELOS.png" alt>
             </div>
             <div class="banner-text-item">
                 <div class="banner-heading">
@@ -111,14 +105,12 @@
         <!--==============Places===================-->
         <section class="places">
             <div class="places-text">
-                <!-- <small>Paquetes Turisticos</small> -->
-                <h2>Paquetes Especiales</h2>
+                <!-- <h1>Paquetes Turisticos</h1> -->
+                <h2>Paquetes Turísticos</h2>
             </div>
 
-            <div class="cards">
-                <div id="paquetesContainer" class="paquetes-container">
-                    <!-- Aquí se insertarán las tarjetas de paquetes -->
-                </div>
+            <div class="cards" id="paquetesContainer">
+                
             </div>
         </section>
 
@@ -133,5 +125,11 @@
             </div>
 
         </footer>
+
+        <script src="https://kit.fontawesome.com/a5d52be292.js" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../js/index.js" async defer></script>
     </body>
 </html>
