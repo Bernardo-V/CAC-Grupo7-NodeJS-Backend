@@ -1,19 +1,23 @@
 const express = require("express");
 const app = express();
+const cors = require ("cors")
 // const viajesRouter = require("./routes/paquetesRouter.js")
 const path = require('path');
 require('dotenv').config();
 
+const paquetesRouter = require("./routes/paquetesRouter.js")
 const usuariosRouter = require("./routes/userRouter.js")
 const authenticate = require('./middleware/authenticate.js'); // Importa el middleware de autenticación
 
 
-const db = require ("./data/bd.js")
+const db = require ("./data/bd.js");
+app.use(cors());
 
 
 const PORT = process.env.PORT || 3001;
 
 // app.use("/viajes", viajesRouter)
+app.use("/paquetes", paquetesRouter)
 app.use ("/usuarios",usuariosRouter)
 
 app.use(express.static(path.join(__dirname, '../frontend/public')));
