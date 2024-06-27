@@ -48,9 +48,10 @@ $(document).ready(function() {
                 data: JSON.stringify(formData),
                 success: function(data) {
                     // Maneja la respuesta del servidor
-                console.log("Respuesta del servidor:", data);
+                    console.log("Respuesta del servidor:", data);
+                    alert('usuario Creado');
                         // Redirige a una página de éxito o realiza alguna acción
-                        // window.location.href = data.redirect;
+                        window.location.href = '/miperfil';
                 },
               error: function (xhr, textStatus, errorThrown) {
                   console.error("Error en la solicitud:", xhr);
