@@ -66,16 +66,6 @@ $(document).ready(function() {
         }
     });
 
-    // // Manejar el evento submit del formulario de registro
-    // $("form[name='register']").submit(function(event) {
-    //     event.preventDefault(); // Evita que se envíe el formulario normalmente
-
-    //     // Ejecuta la validación manualmente
-    //     if ($(this).validate().form()) {
-    //         // Si la validación es exitosa, ejecuta el submitHandler definido arriba
-    //         $(this).submitHandler();
-    //     }
-    // });
 
     // Evento keyup para limpiar mensajes de error al escribir en los campos
     $('#nombre').on('keyup', function () {
