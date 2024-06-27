@@ -34,7 +34,7 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
       const user = await UserModel.findOne({ where: { mail: req.body.mail } });
       console.log(user)
         if (user) {
-            return res.status(404).json({ message: "Email existente" });
+        return res.status(404).json({ message: "Email existente" });
       }
       
     // Crear el paquete en la base de datos utilizando Sequelize
@@ -45,9 +45,10 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
         }
     const nuevoUsuario = await UserModel.create(req.body);
     console.log(nuevoUsuario)
-    res.status(201).json(req.body); // Respondemos con el paquete creado y un código 201 (creado)
+       return res.status(201).json({ message: "Usuario creado exitosamente", usuario: nuevoUsuario });
     } catch (error) {
-        res.json({message:error.message}) 
+         console.error("Error en la solicitud:", error.message);
+        return res.status(500).json({ message: "Error en el servidor al crear usuario" });
     }
 }
   const actualizarUsuario= async (req,res)=>{
