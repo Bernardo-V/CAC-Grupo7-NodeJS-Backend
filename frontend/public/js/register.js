@@ -1,59 +1,100 @@
-function validarFormulario() {
-    var nombre = document.getElementById("apellido").value;
-    var nombre = document.getElementById("nombre").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+$(document).ready(function() {
+    // Validación del formulario de registro
+    $("form[name='register']").validate({
+        rules: {
+            nombre: {
+                required: true
+            },
+            apellido: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true
+            }
+        },
+        messages: {
+            nombre: "Por favor, ingrese nombre",
+            apellido: "Por favor, ingrese apellido",
+            email: {
+                required: "Por favor, ingrese su correo electrónico",
+                email: "Por favor, ingrese un correo electrónico válido"
+            },
+            password: "Por favor, ingrese una contraseña"
+        },
+        submitHandler: function(form) {
+            // Limpia los mensajes de error previos
+            $("#email-error").text("");
+            $("#password-error").text("");
+            $("#nombre-error").text("");
+            $("#apellido-error").text("");
 
-    if (password.length < 6) {
-        alert("La contraseña debe tener al menos 6 caracteres.");
-        return false;
-    }
+            // Obtén los datos del formulario
+            var formData = {
+                mail: $("input[name='email']").val(),
+                password: $("input[name='password']").val(),
+                nombre: $("input[name='nombre']").val(),
+                apellido: $("input[name='apellido']").val()
+            };
 
-    alert("Registro exitoso:\nNombre de usuario: " + nombre + "\nCorreo electrónico: " + email);
-    return true;
-}
+            // Realiza la petición POST al servidor
+            $.ajax({
+                type: "POST",
+                url: "/usuarios/",
+                contentType: "application/json",
+                data: JSON.stringify(formData),
+                success: function(data) {
+                    // Maneja la respuesta del servidor
+                console.log("Respuesta del servidor:", data);
+                        // Redirige a una página de éxito o realiza alguna acción
+                        // window.location.href = data.redirect;
+                },
+              error: function (xhr, textStatus, errorThrown) {
+                  console.error("Error en la solicitud:", xhr);
+                    if (xhr.status === 404) {
+                      // alert("El correo electrónico ingresado ya existe. Por favor, ingrese otro correo.");
+                     $("#email-error").text("El correo electrónico ya está registrado");
+                    } else {
+                        // Maneja otros errores posibles
+                        alert("Error en el registro. Por favor, inténtelo de nuevo.");
+                    }
+                }
+            });
+        }
+    });
 
-function guardarDatosL() {
-    // Recuperar los datos del formulario
-    // var user = document.getElementById("user").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-  
-    // Crear un objeto JSON con los datos
-    var datos = {
-      // user: user,
-      email: email,
-      password: password
-    };
-  
-    // Convertir el objeto JSON a una cadena JSON
-    var datosJSON = JSON.stringify(datos);
-  
-    // Guardar los datos en un archivo JSON (puedes ajustar esto según tus necesidades)
-    // En este ejemplo, simplemente mostraremos los datos JSON en la consola.
-    console.log(datosJSON);
-  }
+    // // Manejar el evento submit del formulario de registro
+    // $("form[name='register']").submit(function(event) {
+    //     event.preventDefault(); // Evita que se envíe el formulario normalmente
 
-  function guardarDatosC() {
-    // Recuperar los datos del formulario
-    var nombre = document.getElementById("name").value;
-    var apellido = document.getElementById("apellido").value;  
-    var email = document.getElementById("email").value; 
-    var affair = document.getElementById("affair").value;
-    // var messaje = document.getElementById("messaje").value;
-    // Crear un objeto JSON con los datos
-    var datos = {
-      nombre: nombre,
-      apellido: apellido,
-      email: email,
-      affair: affair
-      // messaje: messaje
-    };
-  
-    // Convertir el objeto JSON a una cadena JSON
-    var datosJSON = JSON.stringify(datos);
-  
-    // Guardar los datos en un archivo JSON (puedes ajustar esto según tus necesidades)
-    // En este ejemplo, simplemente mostraremos los datos JSON en la consola.
-    console.log(datosJSON);
-  }
+    //     // Ejecuta la validación manualmente
+    //     if ($(this).validate().form()) {
+    //         // Si la validación es exitosa, ejecuta el submitHandler definido arriba
+    //         $(this).submitHandler();
+    //     }
+    // });
+
+    // Evento keyup para limpiar mensajes de error al escribir en los campos
+    $('#nombre').on('keyup', function () {
+        if ($(this).val().trim() !== '') {
+            $('#nombre-error').text('');
+        }
+    });
+
+    $('#apellido').on('keyup', function () {
+        if ($(this).val().trim() !== '') {
+            $('#apellido-error').text('');
+        }
+    });
+
+    // Evento para mostrar/ocultar contraseña
+    $('.show-password').on('click', function () {
+        var passwordField = $('.password1');
+        var type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+        passwordField.attr('type', type);
+        $(this).toggleClass('fa-eye-slash');
+    });
+});

@@ -20,12 +20,13 @@
 
   </head>
   <body>
+
+
     <!--===========Nav Bar=================-->
     <section class="nav-bar">
       <nav class="navbar navbar-expand-sm">
-        <div class="logo"> <img
-          src="../img/Logos/Logotipo2.png" alt="Facebook" width="75"
-          height="50">ViajAR</div>
+        <div class="logo" style="color: #52BFB7;"> <img
+          src="../img/Logos/Logotipo2.png"  width="50" height="50" class="img-fluid" alt=""  style="  margin-right: 10px;">ViajAR</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
           data-target="#navbar-list-2" aria-controls="navbarNav"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -79,23 +80,34 @@
         </div>
       </nav>
     </section>
+    
+    <div class="blur-bg"></div>
 
-    <section style=" background-image: '../img/Logos/paisaje.jpeg;'">
+    <section id="SectionBody">
       <div class="container">
-        <section class="vh-100 d-flex justify-content-center align-items-center">
-          <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+         <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+
+          <div class=" col-md-8 col-lg-6 col-xl-5">
                 <form name="login">
                   <div class="divider d-flex align-items-center my-1">
-                    <div class="logo"> <img src="../img/Logos/Logotipo2.png"  width="90" height="90" class="img-fluid" alt="">ViajAR</div>
+                    <div class="logo"  style="color: #52BFB7;  position: relative; width: 200px; margin: 0 auto;">
+                      <img src="../img/Logos/Logotipo2.png" class="img-fluid" id="logoInit" alt="">ViajAR
+                    </div>
                   </div>
                   <p id="textInformat">Para ver tus reservas ingresa o regístrate con el email que realizaste la compra.</p>
                   <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #ea6422;">Iniciar Sesión</button>
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block" style="color:white; padding-left: 2.5rem; padding-right: 2.5rem; background-color: #ea6422;"
+                    onclick="redirectSession()">
+                      Iniciar Sesión
+                    </button>
                   </div>
                   <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+                     onclick="redirectRegister()">
+                      Registrarse
+                    </button>
                   </div>
                 </form>
                 <br>
