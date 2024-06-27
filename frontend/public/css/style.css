@@ -33,22 +33,20 @@ html {
 }
 
 /*========================Nav Bar=========================*/
-.nav-bar {
-    /* background-color: #fff; */
-    /* box-shadow: 3px 3px 10px lightslategray; */
-    /* align-items: center; */
-    /* justify-content: space-between; */
+.nav-bar { 
     background-color: white;
-
     position: sticky;
-    /* top: 0; */
-    z-index: 1000;
+     z-index: 1000;
 }
 .navbar {
             box-shadow: 0 4px 4px rgba(0,0,0,0.1); /* Ajuste la sombra según sus preferencias */
         }
  .nav-item-right {
             margin-left: auto; /* Move the item to the right */
+        }
+
+         .nav-item-left {
+            margin-right: auto; /* Move the item to the right */
         }
 ul {
     list-style-type: none; /* Elimina los marcadores */
@@ -62,17 +60,14 @@ ul {
     height: auto; /* Permite que la altura se ajuste automáticamente */
 
 }
-
-/* .fa {
-    font-size: 16px;
-
-} */
 .navbar-nav{ 
     flex: 1;
     display: flex;
     /* flex-flow: row wrap; */
     list-style-type: none;
     justify-content: center;
+    flex-grow: 1;
+  margin: 0 auto;
 }
 
 
