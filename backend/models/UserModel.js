@@ -27,6 +27,10 @@ const UsuarioModel = db.define ("usuarios",{
     type: DataTypes.STRING(60), // Ajusta la longitud según tus necesidades
     allowNull: false,
   },
+    superUsu: {
+    type: DataTypes.TINYINT(1), // Ajusta la longitud según tus necesidades
+    allowNull: false,
+  },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: true,

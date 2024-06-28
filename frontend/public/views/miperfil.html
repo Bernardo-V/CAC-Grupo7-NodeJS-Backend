@@ -20,6 +20,14 @@
         <script
             src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+        <!-- DataTables JS -->
+        <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
         <!-- NAV-BAR  -->
         <script src="../js/nav-bar.js"></script>
         <!-- ESTILO GLOBAL CSS -->
@@ -31,6 +39,9 @@
         <script src="../js/miperfil.js"></script>
         <!-- TITULO  -->
         <title>ViajAR</title>
+        <style>
+        
+    </style>
     </head>
 
     <body>
@@ -101,13 +112,25 @@
                 </div>
             </nav>
         </section>
-
-        <section style="background-color: #eee;">
+        <!-- ANIMACION FONDO  -->
+        <section class="area">
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
             <div class="container py-5">
                 <div class="row">
                     <div class="col">
                         <nav aria-label="breadcrumb"
-                            class="bg-body-tertiary rounded-3 p-3 mb-4">
+                            class="bg-body-tertiary rounded-3 mb-4">
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item active"
                                     aria-current="page">Perfil</li>
@@ -116,8 +139,7 @@
                     </div>
                 </div>
                 <div class="row">
-
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="row mb-3">
@@ -126,7 +148,7 @@
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <input type="text" id="nombre"
-                                            class="form-control"
+                                            class="form-control col-sm-3"
                                             value>
                                     </div>
                                 </div>
@@ -135,7 +157,8 @@
                                         <h6 class="mb-0">Apellido</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control"
+                                        <input type="text"
+                                            class="form-control col-sm-3"
                                             id="apellido" value>
                                     </div>
                                 </div>
@@ -144,7 +167,8 @@
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control"
+                                        <input type="text"
+                                            class="form-control col-sm-3"
                                             id="email" value>
                                     </div>
                                 </div>
@@ -152,11 +176,11 @@
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Contraseña nueva</h6>
                                     </div>
-                                    <div class="col-sm-6 text-secondary">
+                                    <div class="col-sm-3 text-secondary">
                                         <input type="password" name="password"
-                                            class="form-control password1"
+                                            class="form-control password1 col-sm-8"
                                             id="nueva-contraseña" /><span
-                                            class="fa fa-fw fa-eye password-icon show-password"></span>
+                                            class="fa fa-fw fa-eye col-sm-6 password-icon show-password"></span>
                                     </div>
                                 </div>
 
@@ -177,11 +201,28 @@
                             <div class="col-md-12">
                                 <div class="card mb-4 mb-md-0">
                                     <div class="card-body">
-                                        <p class="mb-4"><span
+                                        <!-- <p class="mb-4"><span
                                                 class="text-primary font-italic me-1">Paquetes</span>
                                             comprados
-                                        </p>
-                                        <p class="mb-1"
+                                        </p> -->
+                                        <div id="usuariosTableContainer"
+                                            style="display: none;">
+                                            <table id="usuariosTable"
+                                                class="hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <th>Apellido</th>
+                                                        <th>Email</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Las filas se añadirán dinámicamente aquí -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- <p class="mb-1"
                                             style="font-size: .77rem;">Web
                                             Design</p>
                                         <div class="progress rounded"
@@ -240,7 +281,10 @@
                                                 aria-valuenow="66"
                                                 aria-valuemin="0"
                                                 aria-valuemax="100"></div>
-                                        </div>
+                                        </div> -->
+                                        <br>
+                                        <br>
+                                        <br>
                                     </div>
                                 </div>
                             </div>

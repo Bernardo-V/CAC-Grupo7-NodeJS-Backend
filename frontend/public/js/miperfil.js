@@ -32,6 +32,12 @@ async function datosUsuario() {
                 apellido.value = data.apellido;
                 const email = document.getElementById('email');
                 email.value = data.mail;
+                const rol = data.superUsu;
+                console.log(rol)
+                if (rol === 1) {
+                    document.getElementById('usuariosTableContainer').style.display = 'block';
+                    verTodosUsu(idusuarios)
+                }
             },
             error: function (xhr, textStatus, errorThrown) {
                 console.error("Error en la solicitud:", xhr);
@@ -96,6 +102,55 @@ async function enviarDatos(formData) {
     }
 }
 
+// VER TODOS LOS USUARIOS SIENDO ADMIN 
+async function verTodosUsu(usuarioActualId) {
+    try {
+        $.ajax({
+            type: "GET",
+            url: `/usuarios/`,
+            contentType: "application/json",
+            success: function (data) {
+                // Inicializar DataTable
+                const table = $('#usuariosTable').DataTable();
+                // Limpiar cualquier dato previo en la tabla
+                table.clear();
+                // Rellenar la tabla con los datos obtenidos
+                data.filter(user => user.idusuarios !== usuarioActualId).forEach(data => {
+                    table.row.add([
+                        data.nombre,
+                        data.apellido,
+                        data.mail,
+                        `<button class="btn btn-danger" style="text-align: center;" onclick="borrarUsuario(${data.idusuarios})"><i class="fa-solid fa-trash"></i></button>`
+                    ]).draw(false);
+                });
+                console.log(data)
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.error("Error en la solicitud:", xhr);
+            }
+        });
+
+    } catch (error) {
+    console.error('Error al obtener los datos del usuario:');
+  }
+}
+
+
+// Función para borrar un usuario
+function borrarUsuario(userId) {
+    $.ajax({
+        type: "DELETE",
+        url: `/usuarios/${userId}`,
+        success: function () {
+            alert('Usuario borrado exitosamente');
+            datosUsuario(); // Actualizar la tabla después de borrar el usuario
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.error("Error al borrar el usuario:", xhr);
+        }
+    });
+}
+
 // Evento que se dispara al cargar la página
 window.addEventListener("load", function() {
     datosUsuario();
@@ -122,7 +177,14 @@ window.addEventListener("load", function() {
 
 });
 
+    $(document).ready(function() {
+    $('#usuariosTable').DataTable({
+        columnDefs: [
+            { orderable: false, targets: -1 } // Deshabilitar el sorting en la última columna (Acciones)
+        ]
+    });
+    datosUsuario(); // Cargar datos del usuario al iniciar
+});
 
-// Llamar a la función para mostrar traer los datos
-datosUsuario();
+
 
