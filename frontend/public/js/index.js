@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const fetchPaquetes = async ()=>{
 
     try {
-      const respuesta = await axios(`http://localhost:3001/paquetes`);
+      const respuesta = await axios(`https://viaja2024.alwaysdata.net/paquetes`);
       //console.log(respuesta.data);
       const paquetes = respuesta.data;
       //Borrar todo antes de cargar?
