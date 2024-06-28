@@ -7,6 +7,7 @@ require('dotenv').config();
 
 const paquetesRouter = require("./routes/paquetesRouter.js")
 const usuariosRouter = require("./routes/userRouter.js")
+const comentarioRouter = require("./routes/comentarioRouter.js")
 const authenticate = require('./middleware/authenticate.js'); // Importa el middleware de autenticación
 
 
@@ -19,6 +20,7 @@ const PORT = process.env.PORT || 3001;
 // app.use("/viajes", viajesRouter)
 app.use("/paquetes", paquetesRouter)
 app.use ("/usuarios",usuariosRouter)
+app.use ("/comentarios",comentarioRouter)
 
 app.use(express.static(path.join(__dirname, '../frontend/public')));
 
