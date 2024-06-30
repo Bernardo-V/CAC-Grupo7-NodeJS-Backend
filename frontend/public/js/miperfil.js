@@ -34,9 +34,29 @@ async function datosUsuario() {
                 email.value = data.mail;
                 const rol = data.superUsu;
                 console.log(rol)
+
                 if (rol === 1) {
+                    document.getElementById('boletoTableContainer').style.display = 'none';
+                    document.getElementById('vistaAdmin').style.display = 'block';
                     document.getElementById('usuariosTableContainer').style.display = 'block';
+                    document.getElementById('comentTableContainer').style.display = 'block';
                     verTodosUsu(idusuarios)
+                }
+                else {
+
+                const table = $('#boletosTable').DataTable();
+                // Limpiar cualquier dato previo en la tabla
+                table.clear();
+                // Rellenar la tabla con los datos obtenidos acá faltaria hacer un ajax para la vista de los paquetes que compro ese data.id usuarios
+                data.forEach(data => {
+                    table.row.add([
+                        data.nombre,
+                        data.apellido,
+                        data.mail,
+                        `<button class="btn btn-danger" style="text-align: center;" onclick="borrarUsuario(${data.idusuarios})"><i class="fa-solid fa-trash"></i></button>`
+                    ]).draw(false);
+                });
+
                 }
             },
             error: function (xhr, textStatus, errorThrown) {
@@ -123,6 +143,32 @@ async function verTodosUsu(usuarioActualId) {
                         `<button class="btn btn-danger" style="text-align: center;" onclick="borrarUsuario(${data.idusuarios})"><i class="fa-solid fa-trash"></i></button>`
                     ]).draw(false);
                 });
+                
+                console.log(data)
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.error("Error en la solicitud:", xhr);
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: `/comentarios/`,
+            contentType: "application/json",
+            success: function (data) {
+                // Inicializar DataTable
+                const table = $('#comentTable').DataTable();
+                // Limpiar cualquier dato previo en la tabla
+                table.clear();
+                // Rellenar la tabla con los datos obtenidos
+                data.forEach(data => {
+                    table.row.add([
+                        data.nombre,
+                        data.apellido,
+                        data.mail,
+                        data.comentario,
+                    ]).draw(false);
+                });
+                
                 console.log(data)
             },
             error: function (xhr, textStatus, errorThrown) {

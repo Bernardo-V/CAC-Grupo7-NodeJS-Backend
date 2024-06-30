@@ -31,7 +31,6 @@ body{
 /* Estilo adicional para el botón de borrar */
 #usuariosTable tbody {
     text-align: center;
-
     margin: auto; /* Ajusta el margen automáticamente para centrar el botón */
 }
 
