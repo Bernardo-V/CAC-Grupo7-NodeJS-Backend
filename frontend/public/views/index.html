@@ -2,14 +2,11 @@
 <html lang="es">
 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-       
-        <link
-            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            rel="stylesheet" id="bootstrap-css">
+        <script src="https://kit.fontawesome.com/a5d52be292.js"
+            crossorigin="anonymous"></script>
+        <script src="../js/includes.js"></script>
+        <script src="../js/index.js"></script>
+        <script src="../js/nav-bar.js"></script>
         <title>ViajAR</title>
     </head>
 
@@ -17,29 +14,34 @@
         <!--===========Nav Bar=================-->
         <section class="nav-bar">
             <nav class="navbar navbar-expand-sm">
-                <div class="logo">ViajAR</div>
-                <button class="navbar-toggler" type="button"
-                    data-toggle="collapse"
-                    data-target="#navbar-list-2" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse " id="navbar-list-2">
-                    <ul class="logos">
+                <div class="nav-item-left d-flex aling-item-center">
+                    <div class="logo " style="color: #52BFB7;"> <img
+                            src="../img/Logos/Logotipo2.png" width="50"
+                            height="50"
+                            class="img-fluid" alt
+                            style="  margin-right: 10px;">ViajAR</div>
+                    <button class="navbar-toggler" type="button"
+                        data-toggle="collapse"
+                        data-target="#navbar-list-2" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="logos d-flex align-items-center mb-0">
                         <li>
                             <a href="https://www.facebook.com/"> <img
-                                    src="../img/Logos/facebook.svg"
+                                    src="./img/Logos/facebook.svg"
                                     alt="Facebook" width="75"
                                     height="50"></a>
                             <a href="https://www.instagram.com/"> <img
-                                    src="../img/Logos/square-instagram.svg"
+                                    src="./img/Logos/square-instagram.svg"
                                     alt="Instagram"
                                     width="75"
                                     height="50"></a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav mx-auto">
+                </div>
+                <div class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav mx-auto d-flex">
                         <li class="nav-item">
                             <a class="nav-link" href="/">
                                 <!-- <i class="fa fa-home"></i> -->
@@ -61,10 +63,11 @@
                                 <!-- <i class="fa fa-address-card"></i> -->
                                 Contacto</a></li>
                     </ul>
+                    <!-- BOTON INICIO SESION  -->
                     <ul class="nav-item-right">
                         <li class="nav-item">
                             <!-- <a class="nav-link btn btn-info" -->
-                            <a class="nav-link btn "
+                            <a class="nav-link btn"
                                 style="background-color: #e59b54;color: white;"
                                 href="/login">
                                 <i class="fa fa-user-circle-o"></i> | Iniciar
@@ -78,7 +81,7 @@
         <!--===============Banner================-->
         <section class="banner">
             <div class="sky">
-                <img class="plane" src="../img/VUELOS.png" alt>
+                <img class="plane" src="./img/VUELOS.png" alt>
             </div>
             <div class="banner-text-item">
                 <div class="banner-heading">
@@ -105,12 +108,14 @@
         <!--==============Places===================-->
         <section class="places">
             <div class="places-text">
-                <!-- <h1>Paquetes Turisticos</h1> -->
-                <h2>Paquetes Turísticos</h2>
+                <!-- <small>Paquetes Turisticos</small> -->
+                <h2>Paquetes Especiales</h2>
             </div>
 
-            <div class="cards" id="paquetesContainer">
-                
+            <div class="cards">
+                <div id="paquetesContainer" class="paquetes-container">
+                    <!-- Aquí se insertarán las tarjetas de paquetes -->
+                </div>
             </div>
         </section>
 
@@ -126,10 +131,14 @@
 
         </footer>
 
-        <script src="https://kit.fontawesome.com/a5d52be292.js" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://kit.fontawesome.com/a5d52be292.js"
+            crossorigin="anonymous"></script>
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script
+            src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="../js/index.js" async defer></script>
     </body>
 </html>
