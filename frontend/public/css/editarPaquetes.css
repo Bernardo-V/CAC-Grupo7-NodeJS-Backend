@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(176, 176, 255);
+}
+
+.card-titulo{
+    text-transform: uppercase;
+}
+
+.container-editar-paquetes{
+    width: 100vw;
+    /* margin: 15 15; */
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.card-editar-paquetes{
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    padding: 15px;
+    font-size: 18px;
+    font-family: Roboto;
+}
+
+
+
+
+.formulario-editar-paquetes {
+    
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: start;
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 5px;
+    width: 100%;
+    padding: 1% 2%;
+    margin-top: 15px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 100%;
+    
+}
+
+input {
+    margin-top: 5px;
+    padding: 1%;
+}
+
+textarea{
+    margin-top: 5px;
+    padding: 1%;
+}
+
+.button {
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    text-transform: uppercase;
+    margin-top: 15px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #FDE02F;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Barlow Condensed";
+    width: 30%;
+}

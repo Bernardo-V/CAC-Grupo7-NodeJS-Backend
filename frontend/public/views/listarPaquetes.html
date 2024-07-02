@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/editarPaquetes.css">
+    <link rel="stylesheet" href="../css/listarPaquetes.css">
+    <title>Lista Paquetes</title>
+</head>
+<body>
+    <header>
+        <!-- NavBar -->
+    </header>
+    <main class="paquetes-container">
+        <section class="card-listar-paquetes">
+          <div class="barraTitulo"><a class="btnVolver" href="./index.html">Volver</a>
+            <h1 class="card-titulo">Lista de Paquetes</h1>
+          </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table__column--p">Nombre Paquete</th>
+                  <th class="table__column--p">Destino</th>
+                  <th class="table__column--g">Descripcion</th>
+                  <th class="table__column--p">Días</th>
+                  <th class="table__column--m table__align--right">
+                    <a
+                      href="./crearPaquetes.html"
+                      class="buttonTable--crear"
+                      >+ Crear Paquete</a
+                    >
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="body-tabla-paquetes">
+
+                 <!-- acá van dinamicamente listados los paquetes -->
+                <tr>
+                  <td class="td"  data-td>Bariloche PROMO</td>
+                  <td>Patagonia</td>
+                  <td>Pasajes Aereos: Buenos Aires / Bariloche / Buenos Aires</td>
+                  <td>4 días / 3 noches</td>
+                  <td>
+                    <ul class="table__button-control">
+                      <li>
+                        <a
+                          href="../views/editarPaquetes.html"
+                          class="buttonTable--editar"
+                          >Editar</a
+                        >
+                      </li>
+                      <li>
+                        <button
+                          class="buttonTable--eliminar"
+                          type="button"
+                        >
+                          Eliminar
+                        </button>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                    <td class="td"  data-td>Bariloche PROMO</td>
+                    <td>Patagonia</td>
+                    <td>Pasajes Aereos: Buenos Aires / Bariloche / Buenos Aires</td>
+                    <td>4 días / 3 noches</td>
+                    <td>
+                      <ul class="table__button-control">
+                        <li>
+                          <a
+                            href="../views/editarPaquetes.html"
+                            class="buttonTable--editar"
+                            >Editar</a
+                          >
+                        </li>
+                        <li>
+                          <button
+                            class="buttonTable--eliminar"
+                            type="button"
+                          >
+                            Eliminar
+                          </button>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+        </section>
+        <!-- <div class="modal-container modal--close">
+          <article class="modal">
+            <h2 class="modal__title">Eliminar</h2>
+            <button class="modal__close">X</button>
+            <p class="modal__text">¿Deseas continuar?</p>
+            <div class="modal__button-container">
+              <button class="modal__button modal__button--confirm">
+                Eliminar
+              </button>
+              <button class="modal__button">No eliminar</button>
+            </div>
+          </article>
+        </div> -->
+      </main>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script type="module" src="../js/paquetes.js"></script>
+
+
+    
+</body>
+</html>

@@ -5,11 +5,13 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
   const paquetesContainer = document.querySelector("#paquetesContainer");
+  //const servidorURL = "http://viaja2024.alwaysdata.net";
+  const servidorURL = "http://localhost:3001"
 
   const fetchPaquetes = async ()=>{
 
     try {
-      const respuesta = await axios(`https://viaja2024.alwaysdata.net/paquetes`);
+      const respuesta = await axios(`${servidorURL}/paquetes`);
       //console.log(respuesta.data);
       const paquetes = respuesta.data;
       //Borrar todo antes de cargar?
@@ -95,7 +97,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
                     </div> --> */
     } catch (error) {
-      console.error("Error al obtener los posteos", error)
+      console.error("Error al obtener los paquetes", error)
     }
 
 
@@ -105,7 +107,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 })
 
-
+/* 
  const apiUrl = 'http://localhost:3001';
 
         function fetchUsers() {
@@ -189,4 +191,4 @@ async function mostrarPaquetes() {
 }
 
 // Llamar a la función para mostrar los paquetes al cargar la página
-mostrarPaquetes();
+mostrarPaquetes(); */
