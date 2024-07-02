@@ -220,3 +220,28 @@ body{
 }
 
 
+
+
+
+.loadingPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 9999;
+    width: 50%;
+    height: 25%;
+    border-radius: 8px ;
+    background-color: white;
+    border: 5px solid #241730;
+    /* transition: all 5s ease-in-out; */
+    font-weight: bold;
+    /* font-family: Roboto; */
+    text-align: center !important;
+    /* color: white; */
+  }
+
+ 

@@ -19,6 +19,8 @@
             src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script
             src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
         <!-- NAV-BAR  -->
         <script src="../js/nav-bar.js"></script>
@@ -26,6 +28,8 @@
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <!-- ESTILO PROPIO CSS -->
         <link rel="stylesheet" href="./css/contact.css">
+
+        <script src="../js/contact.js"></script>
 
         <title>Contacto</title>
 
@@ -167,7 +171,7 @@
                         </div>
 
                         <div class="contact-form">
-                            <form id="formRegister" method="POST" action="#">
+                            <form id="formRegister" name="contacto">
                                 <div class="input-box">
                                     <input type="text" required="true"
                                         name="firstname" id="firstname">
@@ -213,6 +217,15 @@
                     </div>
                 </div>
             </div>
+
+            <!-- HTML para el popup de carga -->
+            <div id="loadingPopup" class="loadingPopup">
+                <div class="loading-icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Enviando Comentario, por favor aguarde...</p>
+                </div>
+            </div>
+
         </main>
 
         <script src="../js/validation-contacto.js"></script>

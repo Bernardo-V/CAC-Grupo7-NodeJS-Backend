@@ -37,13 +37,21 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
         return res.status(404).json({ message: "Email existente" });
       }
       
-    // Crear el paquete en la base de datos utilizando Sequelize
+      // Asignar valor por defecto a superUsu si no está presente en el cuerpo de la solicitud
+    const { superUsu = 0, nombre, apellido, mail, password } = req.body;
+      
     if (req.body.password ) {
             const saltRounds = 5;
             const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
             req.body.password = hashedPassword;
         }
-    const nuevoUsuario = await UserModel.create(req.body);
+    const nuevoUsuario = await UserModel.create({
+      nombre,
+      apellido,
+      mail,
+      password,
+      superUsu
+    });
     console.log(nuevoUsuario)
        return res.status(201).json({ message: "Usuario creado exitosamente", usuario: nuevoUsuario });
     } catch (error) {
@@ -98,7 +106,7 @@ const Login = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: userFound.idusuarios, email: userFound.email },
+      { id: userFound.idusuarios, email: userFound.email, rol: userFound.superUsu },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
     );
