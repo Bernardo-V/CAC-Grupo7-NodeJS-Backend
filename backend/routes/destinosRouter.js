@@ -7,7 +7,6 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
 const {crearUnDestino,traerDestinos,traerUnDestino,actualizarDestino,borrarDestino } = require ("../controllers/destinosControllers.js")
 
 router.get("/", traerDestinos) 
-/* router.post ("/auth",Login)  */
 router.get ("/:id",traerUnDestino)
 router.post ("/",crearUnDestino) 
 router.put ("/:id",actualizarDestino ) 
