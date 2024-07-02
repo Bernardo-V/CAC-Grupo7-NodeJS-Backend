@@ -31,7 +31,7 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
 }
   const crearUnDestino= async (req,res)=>{
     try {
-      const destino = await DestinosModel.findOne({ where: { id: req.body.mail } });
+      const destino = await DestinosModel.findOne({ where: { iddestinos: req.body.iddestinos } });
       console.log(destino)
         if (destino) {
         return res.status(404).json({ message: "Id existente" });
@@ -39,12 +39,7 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
       
       // Asignar valor por defecto a superUsu si no está presente en el cuerpo de la solicitud
     const { superDest = 0, titulo_destino, descripcion_destino, region_destino, ciudad, provincia, pais, img_destino } = req.body;
-      
-/*     if (req.body.password ) {
-            const saltRounds = 5;
-            const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-            req.body.password = hashedPassword;
-        } */
+
     const nuevoDestino = await DestinosModel.create({
       titulo_destino,
       descripcion_destino,
@@ -86,7 +81,7 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
 }
   const borrarDestino= async (req,res)=>{
     try {
-        const  destino = await  DestinosModel.destroy({where :{iddestinosos:req.params.id}})
+        const  destino = await  DestinosModel.destroy({where :{iddestinos:req.params.id}})
         res.json({"message": "destino Borrado correctamente"}) 
     } catch (error) {
         res.json({message:error.message}) 
