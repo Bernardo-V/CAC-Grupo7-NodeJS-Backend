@@ -5,8 +5,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
   const paquetesContainer = document.querySelector("#paquetesContainer");
-  //const servidorURL = "http://viaja2024.alwaysdata.net";
-  const servidorURL = "http://localhost:3001"
+  const servidorURL = "http://viaja2024.alwaysdata.net";
+  //const servidorURL = "http://localhost:3001"
 
   const fetchPaquetes = async ()=>{
 
