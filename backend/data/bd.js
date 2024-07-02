@@ -9,11 +9,11 @@ require('dotenv').config();
      port:3306
  }) */
 
- const db = new Sequelize ("viaja2024_viajar2024",process.env.DB_USER,process.env.DB_PASSWORD,{
+  const db = new Sequelize ("viaja2024_viajar2024",process.env.DB_USER,process.env.DB_PASSWORD,{
     host: process.env.DB_HOST,
     dialect: "mysql",
     port:3306
-}) 
+})  
 
 module.exports = db
 
