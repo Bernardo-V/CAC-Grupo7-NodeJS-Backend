@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/*========================Nav Bar=========================*/
+.nav-bar {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+ .nav-item-right {
+            margin-left: auto; /* Move the item to the right */
+        }
+
+.navbar {
+            box-shadow: 0 4px 4px rgba(0,0,0,0.1); /* Ajuste la sombra según sus preferencias */
+        }
+
+        .nav-link { 
+    font-family: "Barlow Condensed";
+    color: black;
+    font-size: 23px;
+    text-transform: uppercase;
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+
+}
+
+.navbar-nav{ 
+    flex: 1;
+    display: flex;
+    /* flex-flow: row wrap; */
+    list-style-type: none;
+    justify-content: center;
+}
+
+
+.logo {
+    /* flex: 1; */
+    font-size: 50px;
+    /* padding: 5px; */
+    /* margin-left: 50px; */
+    font-family: Satisfy;
+}
+
+.logos {
+    list-style-type: none;
+}
+
+
+.logos li {
+    display: inline-block; /* Para alinear los logos horizontalmente */
+    margin-right: 10px; /* Espacio entre los logos */
+}
+
+.logos img {
+    width: 30px; /* Ajusta el ancho de las imágenes de los logos */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+.menu li a:hover {
+    color: midnightblue;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none; /* Elimina los marcadores */
+}
+
+
+
+/*=============================Fin NavBar=============================*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    /* opacity: 0.5; */
+    width: 100%;
+    height: 100%;
+    background: url("../img/contacto.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.form-wrapper {
+    /* opacity: 0.5; */
+    display: flex;
+    position: absolute;
+    /* justify-content: center; */
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    padding: 20px 20px;
+    width: 66%;
+    transform: translate(-50%, -50%);
+    /* background: blue; */
+    background: #241730;
+    margin-top: 130px;
+}
+
+.form-wrapper h2 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.form-wrapper form {
+    margin: 20px 0 10px;
+    margin-top: 20px;
+}
+
+.parte1 {
+    width: 900px;
+    /* background: yellow; */
+    background: #303350;
+
+    padding-left: 20px;
+}
+
+.parte2 {
+    width: 900px;
+    background: black;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: #fff;
+}
+
+i {
+    padding-right: 10px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: #fde02f; */
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 9999;
+    width: 30%;
+    height: 15%;
+    background:#7d7d94;
+    border-radius: 8px ;
+    border: 5px solid #241730;
+    transition: all 5s ease-in-out;
+    font-weight: bold;
+    font-family: Roboto;
+    text-align: center !important;
+    color: white;
+  }
+
+  .popup-content {
+    text-align: center !important;
+  }
+
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  /* .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  } */
+  /* .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  } */
+
+
+form .form-control {
+    height: 50px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.form-control input
+ {
+    height: 80%;
+    display: block;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 20px;
+
+}
+
+
+.form-control textarea
+ {
+    height: 100%;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+
+/* 
+.form-control select {
+    width: 90%;
+    background:  rgba(255,255,255,0.1); 
+} */
+
+.form-control textarea,
+input:is(:focus, :valid) {
+    background: #444;
+    padding: 16px 20px 0;
+}
+
+/* Cambiar el color del placeholder */
+input::placeholder {
+    color: #FFF;
+    /* Color rojo para el placeholder */
+}
+
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: #fff;
+    /* transition: all 0.1s ease; */
+}
+
+input:focus~label,
+input:valid~label {
+    top: -25%;
+    /* padding-bottom: 50px; */
+}
+
+/* input:focus ~ label,
+input:valid ~ label{
+    top:-5px;
+    padding-bottom: 50px;
+} */
+
+
+
+#birthdate {
+    padding: 16px 20px 0px;
+}
+
+#label-birthdate {
+    transform: translateY(-130%);
+    font-size: 0.75rem;
+}
+
+.form-control input:is(:focus, :valid)~label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+
+.form-control input:focus {
+    background-color: blueviolet;
+}
+
+.form-select {
+    display: block;
+    width: 80%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    background: #444;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+
+.form-radio {
+    display: flex;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background: #444;
+    border: 2px solid white;
+    border-radius: 25px;
+    width:fit-content;
+    /* font-weight: bold; */
+    font-family: Roboto;
+    color: white !important;
+}
+
+.form-wrapper .form-radio a{
+    color: white !important;
+}
+
+.form-radio a {
+    text-decoration:none !important;
+
+}
+
+#message {
+    font-weight: bold;
+    font-family: Roboto;
+}
+
+form button {
+    width: 50%;
+    padding: 16px 0;
+    font-size: 1rem;
+    /* background-color: blue; */
+    background-color: #fde02f;
+    color: #143954;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    margin: 25px 0 10px;
+    cursor: pointer;
+    transition: 0.1s ease;
+    color: #fff;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #94b900;
+}
+
+.button {
+    text-align: center;
+}
+
+.sin-marcadores {
+    list-style: none;
+}
+
+.form-wrapper a {
+    text-decoration: none;
+}
+
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+    color: #b3b3b3;
+}
+
+form .form-terms {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+form .terms {
+    display: flex;
+}
+
+form .terms input {
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+
+form .form-terms :where(label, a) {
+    font-size: 0.9rem;
+}
+
+.form-wrapper p a {
+    color: #fff;
+}
+
+.form-wrapper small {
+    display: block;
+    margin-top: 15px;
+    color: #b3b3b3;
+}
+
+.form-wrapper small a {
+    color: #0071eb;
+}
+
+.error {
+    color: red;
+    margin-bottom: 5px;
+}
+
+.form-control input.error,
+.form-select.error {
+    border: 2px solid red;
+}
+
+
+/* MEDIA QUERY PANTALLAS PEQUEÑAS (MÓVILES) */
+@media (max-width: 767px) {
+    body::before {
+        display: none;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1em;
+        justify-content: center;
+        /* background: black; */
+        color: #fff;
+        height: 300px;
+    }
+
+    .menu {
+        padding-right: 45px;
+
+        white-space: nowrap;
+        /* color:#fff; */
+    }
+
+    .logo {
+        margin-left: 0px;
+        background: #000;
+    }
+
+    .logos {
+        padding-right: 45px;
+    }
+
+    /* .form-wrapper {
+        padding: 20px;
+    }  */
+
+    .form-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        /* padding: 20px 70px; */
+        margin-top: 630px;
+        width: 100%;
+        top: 50%;
+        /* margin-right: 120px; */
+    }
+
+    .parte1 {
+        padding-top: 300px;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 65px;
+    }
+
+    nav a img {
+        width: 140px;
+    }
+
+    /* .form-wrapper {
+        width: 100%;
+        top: 50%;
+    } */
+
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+
+    .button {
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 20%;
+        font-size: small;
+    }
+}
+
+/* MEDIA QUERY PANTALLAS MEDIANAS (TABLETS) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    body::before {
+        display: none;
+    }
+
+    .nav-bar {
+        /* display: flex;
+        flex-wrap: wrap; */
+        /* white-space: nowrap; */
+        display: grid;
+        font-size: 1em;
+        justify-content: center;
+        /* background: black; */
+        color: #fff;
+        height: 300px;
+    }
+
+    .menu {
+        grid-column: span 12;
+        padding-right: 45px;
+
+        white-space: nowrap;
+        /* color:#fff; */
+    }
+
+    .logo {
+        grid-column: span 12;
+        margin-left: 0px;
+        background: #fff;
+        width: 700px;
+    }
+
+    .logos {
+        grid-column: span 12;
+        padding-right: 45px;
+        text-align: center;
+    }
+
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    .form-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        /* padding: 20px 70px; */
+        margin-top: 630px;
+        /* margin-right: 120px; */
+    }
+
+    .parte1 {
+        padding-top: 150px;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 65px;
+    }
+
+    nav a img {
+        width: 140px;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        top: 50%;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+
+    .button {
+        text-align: center;
+        padding-right: 20px;
+    }
+
+}
+
+
+
+@media screen and (min-width: 357px) and (max-width: 991px) {
+    .menu {
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        display: none;
+        grid-column: span 12;
+        white-space: nowrap;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 20px 0;
+    }
+
+    .form-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-wrapper input {
+        flex: 1;
+        margin: 5px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: calc(50% - 10px);    }
+  }
+
+  .parte2 {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(50% - 10px);
+  }
+
+
+
+.iframe iframe {
+    width: 90%;
+    text-align: center;
+
+}
+
+/* MEDIA QUERY PANTALLAS GRANDES (PC)
+@media screen and (min-width: 992px) {
+    /* Estilos para pantallas grandes */
+/*body {
+        font-size: 16px;
+    }/*
+
+
+

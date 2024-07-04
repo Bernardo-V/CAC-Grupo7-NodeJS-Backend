@@ -1,0 +1,120 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('../img/Logos/sessionImage.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+                overflow-x: hidden; /* Evita el desplazamiento horizontal */
+
+    }
+.blur-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px); /* Aplica el efecto de desenfoque solo a este elemento */
+    z-index: -1;
+}
+   
+
+
+    .earth-container {
+      position: relative;
+      width: 200px; /* Ajusta el tamaño del contenedor según sea necesario */
+      margin: 0 auto;
+    }
+
+    .rotating-earth {
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .airplane {
+      animation: fly 1.5s ease-in-out infinite;
+      position: absolute;
+      top: 50%; left: 50%; 
+      transform: translate(-50%, -50%);
+    }
+
+    /* DURACION DE LA ANIMACIÓN  */
+    @keyframes fly {
+      0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, -150%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -200%) scale(1.5);
+    opacity: 0;
+  }
+    }
+
+
+    /* Aquí va el CSS adicional */
+      .container {
+          padding-top: 30px; /* Ajusta este valor según sea necesario */
+      }
+
+      .card {
+          margin: 0 auto; /* Centrar horizontalmente */
+          padding: 20px; /* Ajusta este valor para agregar más espacio alrededor del formulario */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el formulario */
+          border-radius: 8px; /* Bordes redondeados */
+          background: white; /* Fondo blanco para la tarjeta */
+      }
+
+      .error {
+    color: red; /* Color de texto rojo */
+    font-size: 14px; /* Tamaño de fuente */
+    margin-top: 5px; /* Espacio superior para separar del campo de entrada */
+}
+
+      @media (min-width: 576px) {
+          .card {
+              width: 80%; /* Ancho de la tarjeta en pantallas pequeñas */
+          }
+      }
+
+      @media (min-width: 768px) {
+          .card {
+              width: 60%; /* Ancho de la tarjeta en pantallas medianas */
+          }
+      }
+
+      @media (min-width: 992px) {
+          .card {
+              width: 50%; /* Ancho de la tarjeta en pantallas grandes */
+          }
+      }

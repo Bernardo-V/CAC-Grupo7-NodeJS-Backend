@@ -1,0 +1,749 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/*------------------------Scroll Bar-----------------------*/
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fde65e;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FDE02F;
+}
+
+/*========================Nav Bar=========================*/
+.nav-bar { 
+    background-color: white;
+    position: sticky;
+     z-index: 1000;
+}
+.navbar {
+            box-shadow: 0 4px 4px rgba(0,0,0,0.1); /* Ajuste la sombra según sus preferencias */
+        }
+        .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+ .nav-item-right {
+            margin-left: auto; /* Move the item to the right */
+        }
+
+         .nav-item-left {
+            margin-right: auto; /* Move the item to the right */
+        }
+ul {
+    list-style-type: none; /* Elimina los marcadores */
+}
+
+.nav-link { 
+    font-family: "Barlow Condensed";
+    color: black;
+    font-size: 23px;
+    text-transform: uppercase;
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+
+}
+.navbar-nav{ 
+    flex: 1;
+    display: flex;
+    /* flex-flow: row wrap; */
+    list-style-type: none;
+    justify-content: center;
+    flex-grow: 1;
+  margin: 0 auto;
+}
+
+
+.logo {
+    /* flex: 1; */
+    font-size: 50px;
+    /* padding: 5px; */
+    /* margin-left: 50px; */
+    font-family: Satisfy;
+}
+
+.logos {
+    list-style-type: none;
+}
+
+.logos li {
+    display: inline-block; /* Para alinear los logos horizontalmente */
+    margin-right: 10px; /* Espacio entre los logos */
+}
+
+.logos img {
+    width: 30px; /* Ajusta el ancho de las imágenes de los logos */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+.menu li a:hover {
+    color: midnightblue;
+    text-decoration: underline;
+}
+
+/*=============================Banner=============================*/
+.banner {
+    background-image: url("https://images8.alphacoders.com/851/851663.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*overflow: hidden;*/
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    /*background-size: 100%;*/
+}
+
+.banner-text-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-heading {
+    flex: 1;
+}
+
+.banner-heading h1 {
+    font-size: 100px;
+    font-weight: normal;
+    color: #ffffff;
+    font-family: Satisfy;
+}
+
+.banner-text-item .form {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    width: 70%;
+    padding: 1% 2%;
+}
+
+.banner-text-item input,
+.banner-text-item .date,
+.banner-text-item .book {
+    padding: 15px;
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: Roboto;
+    border-radius: 5px;
+    outline: 0;
+    border: none;
+}
+
+.banner-text-item input {
+    width: 50%;
+    flex: 2;
+}
+
+.banner-text-item .date {
+    width: 20%;
+    flex: 1;
+}
+
+.banner-text-item .book {
+    width: 20%;
+    flex: 1;
+}
+
+.banner-text-item .book {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #FDE02F;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Barlow Condensed";
+    width: 20%;
+}
+
+/*===========================Services===========================*/
+.services {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-item {
+    flex: 1;
+    padding: 50px 0px;
+    border: lightcyan solid 1px;
+    text-align: center;
+    margin: 10px 10px;
+    transition: all 1s;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-item:hover {
+    box-shadow: 3px 3px 20px lightsteelblue;
+}
+
+.service-item h2 {
+    font-family: Barlow Condensed;
+    font-size: 18px;
+    width: 120px;
+    color: #001F38;
+    flex: 1;
+}
+
+.service-item img {
+    width: 60px;
+    height: 60px;
+    flex: 1;
+}
+
+/*=============================Places===============================*/
+.places-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.places-text small {
+    font-family: Roboto;
+    color: #FFC342;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.places-text h2 {
+    font-family: Barlow Condensed;
+    font-size: 55px;
+    color: #191D34;
+    letter-spacing: 1px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.card img {
+    /* width: auto; */
+    max-width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cards .text {
+    padding: 20px;
+    font-family: Barlow Condensed;
+    line-height: 50px;
+}
+
+.cards .card-box {
+    display: flex;
+    flex-flow: row;
+    background-color: #FDE02F;
+    font-size: 18px;
+    font-family: Roboto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cards .time {
+    flex: 1;
+}
+
+.cards .location {
+    flex: 2;
+}
+
+.cards .cost {
+    color: #4CAFAD;
+    font-size: 20px;
+}
+
+/*------------Zoom in Photos--------------*/
+.zoom-img {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.zoom-img .img-card {
+    position: absolute;
+    overflow: hidden;
+}
+
+.img-card img {
+    -webkit-transition: 0.8s ease;
+    transition: 0.8s ease;
+}
+
+.card:hover .zoom-img img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*=========================About Us=========================*/
+.about {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin: 50px;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    width: 500px;
+    height: 700px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+    flex: 1;
+    /*width: 100px;*/
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.about-text small,
+.about-text p,
+.about-text input,
+.about-text a {
+    flex: 1;
+    font-family: Roboto;
+}
+
+.about-text small {
+    color: #FFC342;
+    font-size: 18px;
+}
+
+.about-text h2 {
+    flex: 1;
+    font-family: Barlow Condensed;
+    font-size: 60px;
+    color: #191D34;
+    width: 450px;
+}
+
+.about-text label {
+    padding-bottom: 10px;
+    color: #506172;
+    font-weight: bolder;
+    font-family: Roboto;
+    letter-spacing: 1px;
+}
+
+.about-text p {
+    width: 500px;
+    line-height: 30px;
+    color: #506172;
+    font-weight: bolder;
+    padding: 50px 0;
+}
+
+.about-text a {
+    background-color: #fff;
+    border: 2px solid #014B85;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 180px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    color: #014B85;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.about-text a:hover {
+    background-color: #014B85;
+    color: #fff;
+}
+
+/*===============Footer===================*/
+.footer {
+    background-image: url("https://www.kayak.com.mx/rimg/kimg/a7/99/537f965f-61814bae-21.jpeg?width=720&height=576&crop=true");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 33.33%;
+    /* Cambio: Establecer tamaño de ancho para los divs */
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.footer::before {
+    position: absolute;
+    content: '';
+    display: block;
+    background-color: rgba(0, 0, 36, 0.80);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Cambio: Media query para pantallas más pequeñas */
+    .links {
+        flex: 0 0 100%;
+        /* Cambio: Permitir que los divs se ajusten al ancho completo */
+    }
+}
+
+.links ul {
+    list-style-type: none;
+}
+
+.links h3 {
+    font-family: Barlow Condensed;
+    font-weight: normal;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.links li {
+    font-family: Roboto;
+    cursor: pointer;
+    padding: 15px 0;
+}
+
+.links li:hover {
+    color: #FFA801;
+}
+
+.links li a{
+    font-family: Roboto;
+    color: white;
+    cursor: pointer;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+
+.links a:hover {
+    color: #FFA801;
+}
+
+
+/*==========================Responsive=============================*/
+
+
+@media screen and (min-width: 357px) and (max-width: 991px) {
+    body::before {
+        display: none;
+    }
+
+    .nav-bar {
+        display: grid;
+        height: 200px;
+        
+    }
+
+    .about {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .about-img {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .about-text {
+        flex: 2;
+        text-align: center;
+    }
+    
+    
+    .about-text p{
+        /* text-align: left; */
+        margin-left: 20%;
+        margin-right: 20%;
+        width: 60%;
+        text-align: justify; /* Restaurar el justificado en pantallas más grandes */
+        padding: 0; 
+    }
+    .about-text label , .about-text a {
+        margin-left: 20%;
+        margin-right: 20%;
+        width: 60%;
+        text-align: justify; /* Restaurar el justificado en pantallas más grandes */
+        padding: 0; 
+
+    }
+    .menu {
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        display: none;
+        grid-column: span 12;
+        white-space: nowrap;
+    }
+
+    .menu.active {
+        display: flex; /* Mostrar el menú cuando se activa */
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .logo {
+        margin: 10px 0;
+    }
+
+    .form {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .form input[type="text"],
+    .form input[type="date"],
+    .form .book {
+        flex: 1;
+        margin: 5px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: calc(50% - 10px); /* 50% del ancho con margen entre ellos */
+    }
+
+    .form input[type="text"],
+    .form input[type="date"] {
+        width: calc(20% - 10px); /* 50% del ancho con margen entre ellos */
+    }
+
+    .form .book {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .text {
+        padding: 5px;
+    }
+    .banner-heading h1 {
+        font-size: 36px; 
+       }
+       
+       
+}
+
+/* Añadido: Media query para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    .banner-heading h1 {
+        font-size: 24px; /* Modificado */
+    }
+}
+/* MEDIA QUERY PANTALLAS MEDIANAS (TABLETS) */
+
+/* MEDIA QUERY PANTALLAS MEDIANAS (TABLETS) */
+/* @media screen and (min-width: 768px) and (max-width: 991px) {
+    body::before {
+        display: none;
+    }
+
+    .nav-bar {
+        /* display: flex;
+        display: grid;
+        font-size: 1em;
+        justify-content: center;
+        background: black;
+        color: #fff;
+        height: 300px;
+    }
+
+    .menu {
+        grid-column: span 12;
+        padding-right: 45px;
+
+        white-space: nowrap;
+    }
+
+    .logo {
+        grid-column: span 12;
+        margin-left: 0px;
+        background: #000;
+        width: 700px;
+    }
+
+    .logos {
+        grid-column: span 12;
+        padding-right: 45px;
+        text-align: center;
+    }
+
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    .form-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 630px;
+    }
+
+    .parte1 {
+        padding-top: 150px;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 65px;
+    }
+
+    nav a img {
+        width: 140px;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        top: 50%;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+
+    .button {
+        text-align: center;
+        padding-right: 20px;
+    }
+
+}
+ */
+
+/* MEDIA QUERY PANTALLAS GRANDES (PC)
+@media screen and (min-width: 992px) {
+    /* Estilos para pantallas grandes */
+/*body {
+        font-size: 16px;
+    }/*
+*/
+.sky .plane {
+    /* position: absolute; */
+    /* animation:   stars 5s linear infinite; */
+    width: 500px;
+    margin-top: 90px;
+    left: -100px; /* Inicia fuera del lado izquierdo de la pantalla */
+    animation: flying 5s linear infinite;
+}
+
+
+.plane {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: flying 5s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flying {
+    0% {
+            transform: translateX(0px);
+    }
+
+    100% {
+        /* transform: translateX(1000px); */
+        /* transform: translateY(-1000px);
+        transform: translateX(calc(100vw + 64px));*/
+        /* transform: translate(calc(100vw - 100px), calc(100vh - 100px)); */
+        transform: translate(calc(100vw - 100px), calc(-100vh + 100px));
+
+
+
+    }
+
+
+}

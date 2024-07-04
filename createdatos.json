@@ -1,0 +1,46 @@
+post 
+http://localhost:3001/viajes/
+
+
+
+{
+  "titulo_paquete": "Paquete Norte",
+  "descripcion_paquete": "Viaje extraordinario al Norte",
+  "img_paquete": "/uploads/caba.jpg",
+  "precio_paquete": 450000,
+  "dias_paquete": "5 días",
+  "destino_paquete": "Norte",
+  "id_destinos": 7
+}
+
+    {
+  "titulo_paquete": "Paquete Sur",
+  "descripcion_paquete": "Viaje extraordinario al Sur",
+  "img_paquete": "/uploads/paqueteSur.jpg",
+  "precio_paquete": 470000,
+  "dias_paquete": "5 días",
+  "destino_paquete": "Calafate, Ushuaia",
+  "id_destinos": 7
+}
+
+
+{
+  "titulo_paquete": "Pto Iguazú Misiones",
+  "descripcion_paquete": "Viaje extraordinario las cataratas Arg y Bra",
+  "img_paquete": "/uploads/iguazu.jpg",
+  "precio_paquete": 300000,
+  "dias_paquete": "7 días",
+  "destino_paquete": "Misiones, Brasil",
+  "id_destinos": 7
+}
+
+Post
+http://localhost:3001/usuarios/
+{
+  "nombre": "pp",
+  "apellido": "pp",
+  "mail": "juan@example.com",
+  "password":1234
+}
+
+
