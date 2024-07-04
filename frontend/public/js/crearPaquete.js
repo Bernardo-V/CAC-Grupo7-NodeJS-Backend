@@ -3,8 +3,8 @@ console.log("crearPaquete.js cargado correctamente");
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
-    //const servidorURL = "http://viaja2024.alwaysdata.net";
-    const servidorURL = "http://localhost:3001"
+    const servidorURL = "http://viaja2024.alwaysdata.net";
+    //const servidorURL = "http://localhost:3001"
     
     const formCrearPaquetes = document.querySelector("#formulario-crear-paquetes");
 
