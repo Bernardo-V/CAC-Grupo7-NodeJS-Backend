@@ -465,6 +465,23 @@ ul {
     right: 0;
 }
 
+.buttonTable--crear{
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    text-transform: uppercase;
+    /* margin-top: 15px; */
+    padding: 5px;
+    cursor: pointer;
+    background-color: #FDE02F;
+    box-shadow: 3px 3px 5px #00000038;;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Barlow Condensed";
+    /* width: 30%; */
+   }
+
 @media screen and (max-width: 768px) {
 
     /* Cambio: Media query para pantallas más pequeñas */
@@ -617,7 +634,8 @@ ul {
     .banner-heading h1 {
         font-size: 36px; 
        }
-       
+    
+
        
 }
 

@@ -40,6 +40,7 @@ async function datosUsuario() {
                     document.getElementById('vistaAdmin').style.display = 'block';
                     document.getElementById('usuariosTableContainer').style.display = 'block';
                     document.getElementById('comentTableContainer').style.display = 'block';
+                    document.getElementById('paquetesTableContainer').style.display = 'block';
                     verTodosUsu(idusuarios)
                 }
                 else {
@@ -175,6 +176,42 @@ async function verTodosUsu(usuarioActualId) {
                 console.error("Error en la solicitud:", xhr);
             }
         });
+        $.ajax({
+            type: "GET",
+            url: `/paquetes/`,
+            contentType: "application/json",
+            success: function (data) {
+
+                if ($.fn.DataTable.isDataTable('#paquetesTable')) {
+                    $('#paquetesTable').DataTable().clear().destroy();
+                }
+                // Inicializar DataTable
+                const table = $('#paquetesTable').DataTable({
+                    columnDefs: [
+                        { orderable: false, targets: -1 } // Deshabilitar el sorting en la última columna (Acciones)
+                    ]
+                });
+                // Limpiar cualquier dato previo en la tabla
+                table.clear();
+                // Rellenar la tabla con los datos obtenidos
+                data.forEach(data => {
+                    console.log("titulo: "+data.titulo_paquete);
+                    table.row.add([
+                        data.titulo_paquete,
+                        data.destino_paquete,
+                        data.dias_paquete,
+                        `<div style="text-align: center;"><button class="btn btn-danger" style="text-align: end;" onclick="borrarPaquete(${data.idpaquetes})"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-primary" style="text-align: start;" onclick="editarPaquete(${data.idpaquetes})"><i class="fa-solid fa-pen-to-square"></i></button></div>`
+                                              
+                    ]).draw(false);
+                });
+                
+                console.log(data)
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.error("Error en la solicitud:", xhr);
+            }
+        });
 
     } catch (error) {
     console.error('Error al obtener los datos del usuario:');
@@ -195,6 +232,28 @@ function borrarUsuario(userId) {
             console.error("Error al borrar el usuario:", xhr);
         }
     });
+}
+
+
+// Función para borrar un usuario
+function borrarPaquete(id) {
+    $.ajax({
+        type: "DELETE",
+        url: `/paquetes/${id}`,
+        success: function (data) {
+            alert('Paquete borrado exitosamente');
+            datosUsuario(); // Actualizar la tabla después de borrar el usuario
+        
+            
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.error("Error al borrar el usuario:", xhr);
+        }
+    });
+}
+
+function editarPaquete(id) {
+    window.location.href = `../views/editarPaquetes.html?id=${id}`;
 }
 
 // Evento que se dispara al cargar la página
@@ -229,6 +288,7 @@ window.addEventListener("load", function() {
             { orderable: false, targets: -1 } // Deshabilitar el sorting en la última columna (Acciones)
         ]
     });
+
     datosUsuario(); // Cargar datos del usuario al iniciar
 });
 

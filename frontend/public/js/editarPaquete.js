@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const formEditarPaquetes = document.querySelector("#formulario-editar-paquetes");
 
-    const servidorURL = "http://viaja2024.alwaysdata.net";
-    //const servidorURL = "http://localhost:3001"
+    //const servidorURL = "http://viaja2024.alwaysdata.net";
+    const servidorURL = "http://localhost:3001"
 
     const parametrosURL = new URLSearchParams(window.location.search);
-    const IdPosteo =parametrosURL.get("id");
+    const idPaquete =parametrosURL.get("id");
 
     const listarUnPaquete = async (id)=>{
         try {
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     } 
 
-    if(IdPosteo){
-    listarUnPaquete(IdPosteo);
+    if(idPaquete){
+    listarUnPaquete(idPaquete);
     }else{
         console.log("algo falló");
     }
@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
             id_destinos: document.querySelector("#id_destino").value,
         };
         try {
-            //console.log(editarPaquete +" "+ IdPosteo);
-            await axios.put(`${servidorURL}/paquetes/${IdPosteo}`,editarPaquete);
+            console.log(editarPaquete +" "+ idPaquete);
+            await axios.put(`${servidorURL}/paquetes/${idPaquete}`, editarPaquete);
             //console.log(editarPaquete);
             //limpiar formulario
             formEditarPaquetes.reset();
             //alert o modal y regresar a listar paquetes
-            window.location.href = `./listarPaquetes.html`;
+            window.location.href = `/miperfil`;
         } catch (error) {
             console.error("Error al crear el paquete", error)
         }
