@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const formEditarPaquetes = document.querySelector("#formulario-editar-paquetes");
 
-    //const servidorURL = "http://viaja2024.alwaysdata.net";
-    const servidorURL = "http://localhost:3001"
+    const servidorURL = "http://viajarturismo.alwaysdata.net";
+    //const servidorURL = "http://localhost:3001"
 
     const parametrosURL = new URLSearchParams(window.location.search);
     const idPaquete =parametrosURL.get("id");
