@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/editarPaquetes.css">
+    <link rel="stylesheet" href="../css/listarPaquetes.css">
+    <title>Editar Paquetes</title>
+</head>
+<body>
+    <header>
+        <!-- NavBar -->
+    </header>
+    <main class="container-editar-paquetes">
+        <section class="card-editar-paquetes">
+          <div class="barraTitulo"><a class="btnVolver" href="/miperfil">Volver</a>
+            <h1 class="card-titulo">Editar Paquetes</h1>
+            </div>
+            <form action="#" class="formulario-editar-paquetes" id="formulario-editar-paquetes">
+                <div class="input-container">
+                    <label class="input-label" for="nombre">Titulo:</label> 
+                    
+                    <input
+                      name="titulo"
+                      id="titulo"
+                      class="input"
+                      type="text"
+                      placeholder="titulo"
+                      required                      
+                    />  
+                                     
+                  </div>
+                  <div class="input-container">
+                    <label class="input-label" for="descripcion">Descripcion:</label>
+                    <textarea name="descripcion" id="descripcion" rows="8" width="100%" placeholder="descripcion" required></textarea>                                    
+                  </div>
+
+                  <div class="input-container">
+                    <label class="input-label"  for="imagen">Url imagen:</label> 
+                    
+                    <input 
+                      name="imagen"
+                      id="imagen"
+                      class="input"
+                      type="text"
+                      placeholder="URL imagen"
+                      max-width="100%"
+                      
+                      required                      
+                    />  
+                                     
+                  </div>
+
+                  <div class="input-container">
+                    <label class="input-label" for="precio">Precio:</label>            
+                    <input
+                      name="precio"
+                      id="precio"
+                      class="input"
+                      type="text"
+                      placeholder="precio"
+                      required                      
+                    />                                       
+                  </div>
+
+                  <div class="input-container">
+                    <label class="input-label" for="dias">Días:</label> 
+                    
+                    <input
+                      name="dias"
+                      id="dias"
+                      class="input"
+                      type="text"
+                      placeholder="4 días / 3 noches"
+                      required                      
+                    />  
+                                     
+                  </div>
+                  <div class="input-container">
+                    <label class="input-label" for="destino">Destino:</label> 
+                    
+                    <input
+                      name="destino"
+                      id="destino"
+                      class="input"
+                      type="text"
+                      placeholder="Patagonia/ Norte/ Cuyo/ Litoral/ Centro"
+                      required                      
+                    />  
+                                     
+                  </div>
+                  <div class="input-container">
+                    <label class="input-label" for="id_destino">ID destino:</label> 
+                    
+                    <input
+                      name="id_destino"
+                      id="id_destino"
+                      class="input"
+                      type="text"
+                      placeholder="id_destino"
+                      required                      
+                    />  
+                                     
+                  </div>
+                                
+                  <button type="submit" class="button">Editar Paquetes</button>
+            </form>
+            
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../js/editarPaquete.js"></script>
+
+    
+</body>
+</html>

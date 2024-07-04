@@ -32,6 +32,7 @@
         <script src="../js/nav-bar.js"></script>
         <!-- ESTILO GLOBAL CSS -->
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+        
         <!-- ESTILO PROPIO CSS -->
         <link rel="stylesheet" type="text/css" href="./css/miperfil.css">
 
@@ -242,6 +243,16 @@
                                                             aria-controls="comentarios"
                                                             aria-selected="false">Comentarios</a>
                                                     </li>
+                                                    <li class="nav-item"
+                                                        role="presentation">
+                                                        <a class="nav-link"
+                                                            id="paquetes-tab"
+                                                            data-toggle="tab"
+                                                            href="#paquetes"
+                                                            role="tab"
+                                                            aria-controls="paquetes"
+                                                            aria-selected="false">Paquetes</a>
+                                                    </li>
                                                 </ul>
                                                 <!-- Tab panes -->
                                         <div class="tab-content">
@@ -265,7 +276,7 @@
                                                                     <!-- Las filas se añadirán dinámicamente aquí -->
                                                                 </tbody>
                                                             </table>
-                                                        </br>
+                                                        <br>
                                                         </div>
                                                     </div>
                                                 <div class="tab-pane fade" id="comentarios" role="tabpanel" aria-labelledby="comentarios-tab">
@@ -287,6 +298,26 @@
                                                         </table>
                                                     </div>  
                                                 </div>
+                                                <div class="tab-pane fade" id="paquetes" role="tabpanel" aria-labelledby="paquetes-tab">
+                                                    <div id="paquetesTableContainer"
+                                                        style="display: none;">
+                                                        <table id="paquetesTable"
+                                                            class="hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Titulo Paquete</th>
+                                                                    <th>Destino</th>
+                                                                    <th>Dias</th>
+                                                                    <th style="text-align: center;">Acciones <a class="buttonTable--crear" style="margin-left:15px" href="../views/crearPaquetes.html"> +Crear Nuevo</a></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- Las filas se añadirán dinámicamente aquí -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>  
+                                                </div>
+                                                
                                         </div>
                                     </div>
                                 </div>
