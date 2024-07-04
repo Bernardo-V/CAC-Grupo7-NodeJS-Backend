@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- GOOGLE FONTS -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Quicksand&display=swap"
+            rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a5d52be292.js"
+            crossorigin="anonymous"></script>
+        <!-- BOOTSTRAP  -->
+        <link
+            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            rel="stylesheet" id="bootstrap-css">
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script
+            src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+        <!-- DataTables JS -->
+        <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+        <!-- NAV-BAR  -->
+        <script src="../js/nav-bar.js"></script>
+        <!-- ESTILO GLOBAL CSS -->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <!-- ESTILO PROPIO CSS -->
+        <link rel="stylesheet" type="text/css" href="./css/miperfil.css">
+
+        <!-- JAVS SCRIPT PROPIO  -->
+        <script src="../js/miperfil.js"></script>
+        <!-- TITULO  -->
+        <title>ViajAR</title>
+        <style>
+        .tab-content .tab-pane {
+            padding-top: 20px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <!--===========Nav Bar=================-->
+        <section class="nav-bar">
+            <nav class="navbar navbar-expand-sm">
+                <div class="nav-item-left d-flex aling-item-center">
+                    <div class="logo " style="color: #52BFB7;"> <img
+                            src="../img/Logos/Logotipo2.png" width="50"
+                            height="50"
+                            class="img-fluid" alt
+                            style="  margin-right: 10px;">ViajAR</div>
+                    <button class="navbar-toggler" type="button"
+                        data-toggle="collapse"
+                        data-target="#navbar-list-2" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="logos d-flex align-items-center mb-0">
+                        <li>
+                            <a href="https://www.facebook.com/"> <img
+                                    src="./img/Logos/facebook.svg"
+                                    alt="Facebook" width="75"
+                                    height="50"></a>
+                            <a href="https://www.instagram.com/"> <img
+                                    src="./img/Logos/square-instagram.svg"
+                                    alt="Instagram"
+                                    width="75"
+                                    height="50"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav mx-auto d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <!-- <i class="fa fa-home"></i> -->
+                                Inicio</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/patagonia">
+                                <!-- <i class="fa fa-mountain"></i> -->
+                                Patagonia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/norte">
+                                <!-- <i class="fa fa-horse"></i> -->
+                                Norte</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="/contacto">
+                                <!-- <i class="fa fa-address-card"></i> -->
+                                Contacto</a></li>
+                    </ul>
+                    <!-- BOTON INICIO SESION  -->
+                    <ul class="nav-item-right">
+                        <li class="nav-item">
+                            <!-- <a class="nav-link btn btn-info" -->
+                            <a class="nav-link btn"
+                                style="background-color: #e59b54;color: white;"
+                                href="/login">
+                                <i class="fa fa-user-circle-o"></i> | Iniciar
+                                Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <!-- ANIMACION FONDO  -->
+        <section class="area">
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+            <div class="container py-5">
+                <div class="row">
+                            <div class="col">
+                                <nav aria-label="breadcrumb"
+                                    class="bg-body-tertiary rounded-3 mb-4">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item active"
+                                            aria-current="page">Perfil</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="row">
+                <div class="col-lg-12">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Nombre</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="text" id="nombre"
+                                                    class="form-control col-sm-3"
+                                                    value>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Apellido</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="text"
+                                                    class="form-control col-sm-3"
+                                                    id="apellido" value>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Email</h6>
+                                            </div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="text"
+                                                    class="form-control col-sm-3"
+                                                    id="email" value>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Contraseña nueva</h6>
+                                            </div>
+                                            <div class="col-sm-3 text-secondary">
+                                                <input type="password" name="password"
+                                                    class="form-control password1 col-sm-8"
+                                                    id="nueva-contraseña" /><span
+                                                    class="fa fa-fw fa-eye col-sm-6 password-icon show-password"></span>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="row">
+                                            <div class="col-sm-3"></div>
+                                            <div class="col-sm-9 text-secondary">
+                                                <input type="button"
+                                                    class="btn btn-primary px-4"
+                                                    value="Save Changes"
+                                                    onclick="updateUsuario()">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <hr>
+                                        <br>
+                                        <div id="boletoTableContainer"
+                                                            >
+                                                            <table id="boletosTable"
+                                                                class="hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Paquete</th>
+                                                                        <th>Destino</th>
+                                                                        <th>Fecha</th>
+                                                                        <th>Acciones</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tbody>
+                                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                        <div class="row" id="vistaAdmin" style="display: none;">
+                            <div class="col-md-12">
+                                <div class="card mb-4 mb-md-0">
+                                    <div class="card-body">
+                                                <!-- Nav tabs -->
+                                                <ul class="nav nav-tabs" id="myTab"
+                                                    role="tablist">
+                                                    <li class="nav-item"
+                                                        role="presentation">
+                                                        <a class="nav-link active"
+                                                            id="usuarios-tab"
+                                                            data-toggle="tab"
+                                                            href="#usuarios" role="tab"
+                                                            aria-controls="usuarios"
+                                                            aria-selected="true">Usuarios</a>
+                                                    </li>
+                                                    <li class="nav-item"
+                                                        role="presentation">
+                                                        <a class="nav-link"
+                                                            id="comentarios-tab"
+                                                            data-toggle="tab"
+                                                            href="#comentarios"
+                                                            role="tab"
+                                                            aria-controls="comentarios"
+                                                            aria-selected="false">Comentarios</a>
+                                                    </li>
+                                                </ul>
+                                                <!-- Tab panes -->
+                                        <div class="tab-content">
+                                                    <div
+                                                        class="tab-pane fade show active"
+                                                        id="usuarios" role="tabpanel"
+                                                        aria-labelledby="usuarios-tab">
+                                                        <div id="usuariosTableContainer"
+                                                            style="display: none;">
+                                                            <table id="usuariosTable"
+                                                                class="hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Nombre</th>
+                                                                        <th>Apellido</th>
+                                                                        <th>Email</th>
+                                                                        <th>Acciones</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <!-- Las filas se añadirán dinámicamente aquí -->
+                                                                </tbody>
+                                                            </table>
+                                                        </br>
+                                                        </div>
+                                                    </div>
+                                                <div class="tab-pane fade" id="comentarios" role="tabpanel" aria-labelledby="comentarios-tab">
+                                                    <div id="comentTableContainer"
+                                                        style="display: none;">
+                                                        <table id="comentTable"
+                                                            class="hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nombre</th>
+                                                                    <th>Apellido</th>
+                                                                    <th>Email</th>
+                                                                    <th>Comentario</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- Las filas se añadirán dinámicamente aquí -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>  
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                                
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+    </body>
+</html>

@@ -2,21 +2,12 @@
 <html lang="es">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="viajAR icon" href="./img/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="./css/cuadriculas.css">
-        <link rel="stylesheet" href="./css/style.css">
-        <title>Patagonia</title> <!-- elemento title -->
         <script src="https://kit.fontawesome.com/a5d52be292.js"
             crossorigin="anonymous"></script>
-        <link
-            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            rel="stylesheet" id="bootstrap-css">
-        <script
-            src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script
-            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../js/includes.js"></script>
+        <script src="../js/nav-bar.js"></script>
+
+        <link rel="stylesheet" href="./css/cuadriculas.css">
 
     </head>
 
@@ -26,16 +17,21 @@
             <!--===========Nav Bar=================-->
             <section class="nav-bar">
                 <nav class="navbar navbar-expand-sm">
-                    <div class="logo">ViajAR</div>
-                    <button class="navbar-toggler" type="button"
-                        data-toggle="collapse"
-                        data-target="#navbar-list-2" aria-controls="navbarNav"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse " id="navbar-list-2">
-                        <ul class="logos">
+                    <div class="nav-item-left d-flex aling-item-center">
+                        <div class="logo " style="color: #52BFB7;"> <img
+                                src="../img/Logos/Logotipo2.png" width="50"
+                                height="50"
+                                class="img-fluid" alt
+                                style="  margin-right: 10px;">ViajAR</div>
+                        <button class="navbar-toggler" type="button"
+                            data-toggle="collapse"
+                            data-target="#navbar-list-2"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <ul class="logos d-flex align-items-center mb-0">
                             <li>
                                 <a href="https://www.facebook.com/"> <img
                                         src="./img/Logos/facebook.svg"
@@ -48,7 +44,10 @@
                                         height="50"></a>
                             </li>
                         </ul>
-                        <ul class="navbar-nav mx-auto">
+                    </div>
+                    <div
+                        class="collapse navbar-collapse justify-content-center">
+                        <ul class="navbar-nav mx-auto d-flex">
                             <li class="nav-item">
                                 <a class="nav-link" href="/">
                                     <!-- <i class="fa fa-home"></i> -->
@@ -70,10 +69,10 @@
                                     <!-- <i class="fa fa-address-card"></i> -->
                                     Contacto</a></li>
                         </ul>
-                        <ul class="nav-item-right">
+                        <!-- BOTON INICIO SESION  -->
+                        <ul class="nav-item-right ml-auto">
                             <li class="nav-item">
-                                <!-- <a class="nav-link btn btn-info" -->
-                                <a class="nav-link btn "
+                                <a class="nav-link btn" id="botonI"
                                     style="background-color: #e59b54;color: white;"
                                     href="/login">
                                     <i class="fa fa-user-circle-o"></i> |

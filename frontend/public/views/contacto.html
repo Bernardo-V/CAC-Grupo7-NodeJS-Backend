@@ -1,179 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Quicksand&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a5d52be292.js" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- GOOGLE FONTS -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Quicksand&display=swap"
+            rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a5d52be292.js"
+            crossorigin="anonymous"></script>
+        <!-- BOOTSTRAP  -->
+        <link
+            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            rel="stylesheet" id="bootstrap-css">
+        <script
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script
+            src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- ESTILO CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <!-- NAV-BAR  -->
+        <script src="../js/nav-bar.js"></script>
+        <!-- ESTILO GLOBAL CSS -->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <!-- ESTILO PROPIO CSS -->
+        <link rel="stylesheet" href="./css/contact.css">
 
-    <link rel="stylesheet" href="./css/contact.css">
-    <!-- FAVINCON -->
+        <script src="../js/contact.js"></script>
 
-</head>
+        <title>Contacto</title>
 
-<body>
-    <!--===========Nav Bar=================-->
-    <section class="nav-bar">
-        <nav class="navbar navbar-expand-sm">
-            <div class="logo">ViajAR</div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-2"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    </head>
 
-            <div class="collapse navbar-collapse " id="navbar-list-2">
-                <ul class="logos">
-                    <li>
-                        <a href="https://www.facebook.com/"> <img src="./img/Logos/facebook.svg" alt="Facebook"
-                                width="75" height="50"></a>
-                        <a href="https://www.instagram.com/"> <img src="./img/Logos/square-instagram.svg"
-                                alt="Instagram" width="75" height="50"></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <!-- <i class="fa fa-home"></i> -->
-                            Inicio</a>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/patagonia">
-                            <!-- <i class="fa fa-mountain"></i> -->
-                            Patagonia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/norte">
-                            <!-- <i class="fa fa-horse"></i> -->
-                            Norte</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/contacto">
-                            <!-- <i class="fa fa-address-card"></i> -->
-                            Contacto</a></li>
-                </ul>
-                <ul class="nav-item-right">
-                    <li class="nav-item">
-                        <!-- <a class="nav-link btn btn-info" -->
-                        <a class="nav-link btn " style="background-color: #e59b54;color: white;" href="/login">
-                            <i class="fa fa-user-circle-o"></i> | Iniciar Sesión
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-
-    <main id="main">
-        <section id="contact" >
-            <div class="container">
-                <p>En ViajAr, estamos comprometidos en brindarte una experiencia única y memorable mientras exploras las
-                    maravillas de Argentina. Ya sea que estés planeando una aventura en la majestuosa Patagonia, un recorrido
-                    cultural por las ciudades del noroeste o un viaje de ensueño a través de las regiones vitivinícolas,
-                    estamos aquí para hacer que tu viaje sea inolvidable.</p>
-                <p>Si tienes preguntas, comentarios o deseas obtener más información sobre nuestros emocionantes paquetes
-                    turísticos, no dudes en ponerte en contacto con nosotros. Estamos disponibles para atender tus consultas
-                    y ayudarte a planificar tu próxima escapada.</p>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="contact-info-content">
-                                <h4>Address</h4>
-                                <ul class="sin-marcadores">
-                                    <li>
-                                        <p><i class="fa-solid fa-location-dot"></i>Balcarce 78, C1064 CABA </p>
-                                        <div class="iframe">
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13135.383983241743!2d-58.3702778!3d-34.6080556!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352cbe276f75%3A0xe16921ef0545f86d!2sCasa%20Rosada!5e0!3m2!1ses!2sar!4v1697363530494!5m2!1ses!2sar"
-                                                width="300" height="225" style="border:0;" allowfullscreen
-                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-info-content">
-                                <h4>Phone</h4>
-                                <p>221-457-2321</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-info-content">
-                                <h4>Email</h4>
-                                <p>viajAr@viajAr.com</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-form">
-                        <form id="formRegister" method="POST" action="#">
-                            <div class="input-box">
-                                <input type="text" required="true" name="firstname" id="firstname">
-                                <span>Nombre</span>
-                            </div>
-                            <div class="error" id="error-firstname"></div>
-                            <div class="input-box">
-                                <input type="text" name="lastname" required="true" id="lastname">
-                                <span>Apellido</span>
-                            </div>
-                            <div class="error" id="error-lastname"></div>
-                            <div class="input-box">
-                                <input type="email" required="true" name="email" id="email">
-                                <span>Email</span>
-                            </div>
-                            <div class="error" id="error-email"></div>
-                            <div class="input-box">
-                                <textarea required="true" id="message" name="message" name></textarea>
-                                <span>Escriba su mensaje aquí</span>
-                            </div>
-                            <div class="input-box">
-                                <input type="submit" value="Send" name>
-                            </div>
-
-                            
-                        </form>
-                    </div>
+    <body>
+        <!--===========Nav Bar=================-->
+        <section class="nav-bar">
+            <nav class="navbar navbar-expand-sm">
+                <div class="nav-item-left d-flex aling-item-center">
+                    <div class="logo " style="color: #52BFB7;"> <img
+                            src="../img/Logos/Logotipo2.png" width="50"
+                            height="50"
+                            class="img-fluid" alt
+                            style="  margin-right: 10px;">ViajAR</div>
+                    <button class="navbar-toggler" type="button"
+                        data-toggle="collapse"
+                        data-target="#navbar-list-2" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="logos d-flex align-items-center mb-0">
+                        <li>
+                            <a href="https://www.facebook.com/"> <img
+                                    src="./img/Logos/facebook.svg"
+                                    alt="Facebook" width="75"
+                                    height="50"></a>
+                            <a href="https://www.instagram.com/"> <img
+                                    src="./img/Logos/square-instagram.svg"
+                                    alt="Instagram"
+                                    width="75"
+                                    height="50"></a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+                <div class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav mx-auto d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <!-- <i class="fa fa-home"></i> -->
+                                Inicio</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/patagonia">
+                                <!-- <i class="fa fa-mountain"></i> -->
+                                Patagonia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/norte">
+                                <!-- <i class="fa fa-horse"></i> -->
+                                Norte</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="/contacto">
+                                <!-- <i class="fa fa-address-card"></i> -->
+                                Contacto</a></li>
+                    </ul>
+                    <ul class="nav-item-right">
+                        <li class="nav-item">
+                            <!-- <a class="nav-link btn btn-info" -->
+                            <a class="nav-link btn"
+                                style="background-color: #e59b54;color: white;"
+                                href="/login">
+                                <i class="fa fa-user-circle-o"></i> | Iniciar
+                                Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </section>
-        <div id="popup" class="popup">
-            <div class="modal-body">
-                <h1 class="text-center text-uppercase">Gracias por su consulta</h1>
-                <div class="row">
-                    <div class="col-sm-12 col-sm-offset-1">
-                        <p class="text-muted small text-center">Nos estaremos contactando con usted a
-                            la brevedad.</p>
+
+        <main id="main">
+            <section id="contact">
+                <div class="container">
+                    <p>En ViajAr, estamos comprometidos en brindarte una
+                        experiencia única y memorable mientras exploras las
+                        maravillas de Argentina. Ya sea que estés planeando una
+                        aventura en la majestuosa Patagonia, un recorrido
+                        cultural por las ciudades del noroeste o un viaje de
+                        ensueño a través de las regiones vitivinícolas,
+                        estamos aquí para hacer que tu viaje sea
+                        inolvidable.</p>
+                    <p>Si tienes preguntas, comentarios o deseas obtener más
+                        información sobre nuestros emocionantes paquetes
+                        turísticos, no dudes en ponerte en contacto con
+                        nosotros. Estamos disponibles para atender tus consultas
+                        y ayudarte a planificar tu próxima escapada.</p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="contact-info">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <h4>Address</h4>
+                                    <ul class="sin-marcadores">
+                                        <li>
+                                            <p><i
+                                                    class="fa-solid fa-location-dot"></i>Balcarce
+                                                78, C1064 CABA </p>
+                                            <div class="iframe">
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13135.383983241743!2d-58.3702778!3d-34.6080556!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352cbe276f75%3A0xe16921ef0545f86d!2sCasa%20Rosada!5e0!3m2!1ses!2sar!4v1697363530494!5m2!1ses!2sar"
+                                                    width="300" height="225"
+                                                    style="border:0;"
+                                                    allowfullscreen
+                                                    loading="lazy"
+                                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <h4>Phone</h4>
+                                    <p>221-457-2321</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <h4>Email</h4>
+                                    <p>viajAr@viajAr.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form">
+                            <form id="formRegister" name="contacto">
+                                <div class="input-box">
+                                    <input type="text" required="true"
+                                        name="firstname" id="firstname">
+                                    <span>Nombre</span>
+                                </div>
+                                <div class="error" id="error-firstname"></div>
+                                <div class="input-box">
+                                    <input type="text" name="lastname"
+                                        required="true" id="lastname">
+                                    <span>Apellido</span>
+                                </div>
+                                <div class="error" id="error-lastname"></div>
+                                <div class="input-box">
+                                    <input type="email" required="true"
+                                        name="email" id="email">
+                                    <span>Email</span>
+                                </div>
+                                <div class="error" id="error-email"></div>
+                                <div class="input-box">
+                                    <textarea required="true" id="message"
+                                        name="message" name></textarea>
+                                    <span>Escriba su mensaje aquí</span>
+                                </div>
+                                <div class="input-box">
+                                    <input type="submit" value="Enviar" name>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="popup" class="popup">
+                <div class="modal-body">
+                    <h1 class="text-center text-uppercase">Gracias por su
+                        consulta</h1>
+                    <div class="row">
+                        <div class="col-sm-12 col-sm-offset-1">
+                            <p class="text-muted small text-center">Nos
+                                estaremos contactando con usted a
+                                la brevedad.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <script src="../js/validation-contacto.js"></script>
+            <!-- HTML para el popup de carga -->
+            <div id="loadingPopup" class="loadingPopup">
+                <div class="loading-icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Enviando Comentario, por favor aguarde...</p>
+                </div>
+            </div>
 
-</body>
+        </main>
+
+        <script src="../js/validation-contacto.js"></script>
+
+    </body>
 
 </html>

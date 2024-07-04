@@ -30,13 +30,33 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
     }
 }
   const crearUnUsuario= async (req,res)=>{
-  try {
-    // Crear el paquete en la base de datos utilizando Sequelize
-    const nuevoPaquete = await  UserModel.create(req.body);
-    console.log(nuevoPaquete)
-    res.status(201).json(req.body); // Respondemos con el paquete creado y un código 201 (creado)
+    try {
+      const user = await UserModel.findOne({ where: { mail: req.body.mail } });
+      console.log(user)
+        if (user) {
+        return res.status(404).json({ message: "Email existente" });
+      }
+      
+      // Asignar valor por defecto a superUsu si no está presente en el cuerpo de la solicitud
+    const { superUsu = 0, nombre, apellido, mail, password } = req.body;
+      
+    if (req.body.password ) {
+            const saltRounds = 5;
+            const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+            req.body.password = hashedPassword;
+        }
+    const nuevoUsuario = await UserModel.create({
+      nombre,
+      apellido,
+      mail,
+      password,
+      superUsu
+    });
+    console.log(nuevoUsuario)
+       return res.status(201).json({ message: "Usuario creado exitosamente", usuario: nuevoUsuario });
     } catch (error) {
-        res.json({message:error.message}) 
+         console.error("Error en la solicitud:", error.message);
+        return res.status(500).json({ message: "Error en el servidor al crear usuario" });
     }
 }
   const actualizarUsuario= async (req,res)=>{
@@ -86,7 +106,7 @@ const Login = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { user: userFound.email },
+      { id: userFound.idusuarios, email: userFound.email, rol: userFound.superUsu },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
     );
@@ -107,10 +127,6 @@ const Login = async (req, res) => {
   }
 };
  
-
-
-
-
 
 
 module.exports = {borrarUsuario, actualizarUsuario, crearUnUsuario, traerUsuarios,traerUnUsuario , Login}

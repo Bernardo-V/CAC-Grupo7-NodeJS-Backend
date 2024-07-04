@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <script src="https://kit.fontawesome.com/a5d52be292.js"
+      <script src="https://kit.fontawesome.com/a5d52be292.js"
       crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="../js/includes.js"></script>
+
     <link rel="stylesheet" type="text/css" href="./css/login.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      rel="stylesheet" id="bootstrap-css">
-    <script
-      src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script
-      src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <!-- para validar los campos del formulario. -->
 
   </head>
   <body>
+
+
     <!--===========Nav Bar=================-->
     <section class="nav-bar">
       <nav class="navbar navbar-expand-sm">
-        <div class="logo">ViajAR</div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#navbar-list-2" aria-controls="navbarNav"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse " id="navbar-list-2">
-          <ul class="logos">
+        <div class="nav-item-left d-flex aling-item-center">
+          <div class="logo " style="color: #52BFB7;"> <img
+              src="../img/Logos/Logotipo2.png" width="50" height="50"
+              class="img-fluid" alt style="  margin-right: 10px;">ViajAR</div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbar-list-2" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="logos d-flex align-items-center mb-0">
             <li>
               <a href="https://www.facebook.com/"> <img
                   src="./img/Logos/facebook.svg" alt="Facebook" width="75"
@@ -42,7 +35,9 @@
                   height="50"></a>
             </li>
           </ul>
-          <ul class="navbar-nav mx-auto">
+        </div>
+        <div class="collapse navbar-collapse justify-content-center">
+          <ul class="navbar-nav mx-auto d-flex">
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <!-- <i class="fa fa-home"></i> -->
@@ -67,7 +62,7 @@
           <ul class="nav-item-right">
             <li class="nav-item">
               <!-- <a class="nav-link btn btn-info" -->
-              <a class="nav-link btn "
+              <a class="nav-link btn"
                 style="background-color: #e59b54;color: white;"
                 href="/login">
                 <i class="fa fa-user-circle-o"></i> | Iniciar Sesión
@@ -77,88 +72,60 @@
         </div>
       </nav>
     </section>
+    
+    <div class="blur-bg"></div>
 
-    <!-- <div class="logo">ViajAR</div>
-      <ul class="logos">
-        <li>
-          <a href="https://www.facebook.com/"> <img
-              src="./img/Logos/facebook.svg" alt="Facebook" width="75"
-              height="50"></a>
-          <a href="https://www.instagram.com/"> <img
-              src="./img/Logos/square-instagram.svg" alt="Instagram" width="75"
-              height="50"></a>
-        </li>
-      </ul>
-      <ul class="menu">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/patagonia">Patagonia</a></li>
-        <li><a href="/norte">Norte</a></li> 
-        <li><a href="/nosotros">Nosotros</a></li> 
-        <li><a href="/contacto">Contacto</a></li>
-        <li><a
-            style="border-radius: 5%; border-color: black; background-color:rgba(91, 107, 107, 0.291);"
-            href="/login">Iniciar Sesion</a></li>
-      </ul> -->
-
-    <section>
+    <section id="SectionBody">
       <div class="container">
-        <section class="vh-100">
-          <div class="container-fluid h-custom">
-            <div
-              class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-md-9 col-lg-6 col-xl-5">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                  class="img-fluid" alt="Sample image">
-              </div>
-              <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+         <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+
+          <div class=" col-md-8 col-lg-6 col-xl-5">
                 <form name="login">
-                  <div class="divider d-flex align-items-center my-4"></div>
-
-                  <!-- Email input -->
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="email">Email</label>
-                    <input type="email" name="email"
-                      class="form-control form-control-lg" id="email"
-                      placeholder="Enter a valid email address">
-                    <div id="email-error" class="text-danger"></div>
-                  </div>
-
-                  <!-- Password input -->
-                  <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label" for="password">Contraseña</label>
-                    <input type="password" name="password"
-                      class="form-control form-control-lg"
-                      placeholder="Enter password" />
-                    <div id="password-error" class="text-danger"></div>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center">
-                    <!-- Checkbox -->
-                    <div class="form-check mb-0">
-                      <input class="form-check-input me-2" type="checkbox" value
-                        id />
-                      <label class="form-check-label"
-                        for>Remember me</label>
+                  <div class="divider d-flex align-items-center my-1">
+                    <div class="logo"  style="color: #52BFB7;  position: relative; width: 200px; margin: 0 auto;">
+                      <img src="../img/Logos/Logotipo2.png" class="img-fluid" id="logoInit" alt="">ViajAR
                     </div>
-                    <a href="#!" class="text-body">Forgot password?</a>
                   </div>
-
+                  <p id="textInformat">Para ver tus reservas ingresa o regístrate con el email que realizaste la compra.</p>
                   <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="submit" data-mdb-button-init
-                      data-mdb-ripple-init class="btn btn-primary btn-lg"
-                      style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an
-                      account? <a href="#!" class="link-danger">Register</a></p>
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block" style="color:white; padding-left: 2.5rem; padding-right: 2.5rem; background-color: #ea6422;"
+                    onclick="redirectSession()">
+                      Iniciar Sesión
+                    </button>
+                  </div>
+                  <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+                     onclick="redirectRegister()">
+                      Registrarse
+                    </button>
                   </div>
                 </form>
-
-              </div>
+                <br>
+                <div class="">
+                  <div class="d-flex justify-content-center align-items-center h-100">
+                    <section class="card text-center" style="font-size: 30px;">
+                      <p>
+                        <img src="../img/Logos/lista-de-verificacion.png" class="img-fluid"> Chequear el estado de tus reservas.
+                      </p>
+                      <p>
+                        <img src="../img/Logos/etiqueta-de-descuento.png" class="img-fluid"> Acceder a descuentos exclusivos.
+                      </p>
+                      <p>
+                        <img src="../img/Logos/billete-de-avion.png" class="img-fluid"> Descargar los vouchers de tus reservas.
+                      </p>
+                    </section>
+                  </div>
+                </div>
+              </div>    
             </div>
           </div>
-
         </section>
+      </div>
+    </section>
+    
+        
       </div>
     </section>
     <!--===========Footer=================-->
