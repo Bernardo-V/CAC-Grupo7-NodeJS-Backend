@@ -55,7 +55,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
             //alert o modal y regresar a listar paquetes
             window.location.href = `/miperfil`;
         } catch (error) {
-            console.error("Error al crear el paquete", error)
+            console.error("Error al crear el paquete:", error);
+            if (error.response) {
+                console.error("Respuesta del servidor:", error);
+            }
         }
 
     }) 

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             alert("paquete creado");
             window.location.href = `/miperfil`;
         } catch (error) {
-            console.error("Error al crear el paquete", error)
+            console.error("Error al crear el paquete", error.message)
         }
 
     }) 
