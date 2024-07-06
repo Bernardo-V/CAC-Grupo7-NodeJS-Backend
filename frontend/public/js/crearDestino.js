@@ -2,7 +2,7 @@ console.log("crearDestino.js cargado correctamente");
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
-    const servidorURL = "http://viaja2024.alwaysdata.net";
+    const servidorURL = "http://viajarturismo.alwaysdata.net";
     //const servidorURL = "http://localhost:3001"
     
     const formCrearDestino = document.querySelector("#formulario-crear-destino");
