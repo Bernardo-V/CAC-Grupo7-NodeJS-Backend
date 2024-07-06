@@ -31,10 +31,10 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
 }
   const crearUnDestino= async (req,res)=>{
     try {
-      const destino = await DestinosModel.findOne({ where: { iddestinos: req.body.iddestinos } });
+      const destino = await DestinosModel.findOne({ where: { titulo_destino: req.body.titulo_destino } });
       console.log(destino)
         if (destino) {
-        return res.status(404).json({ message: "Id existente" });
+        return res.status(404).json({ message: "Destino existente" });
       }
       
       // Asignar valor por defecto a superUsu si no está presente en el cuerpo de la solicitud

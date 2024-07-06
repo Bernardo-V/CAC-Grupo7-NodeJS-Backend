@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/editarPaquetes.css">
+    <link rel="stylesheet" href="../css/listarPaquetes.css">
+    <title>Editar Paquetes</title>
+</head>
+<body>
+    <header>
+        <!-- NavBar -->
+    </header>
+    <main class="container-editar-paquetes">
+        <section class="card-editar-paquetes">
+          <div class="barraTitulo"><a class="btnVolver" href="/miperfil">Volver</a>
+            <h1 class="card-titulo">Editar Destino</h1>
+            </div>
+            <form action="#" class="formulario-editar-paquetes" id="formulario-editar-destino">
+              <div class="input-container">
+                <label class="input-label" for="nombre">Titulo:</label> 
+                
+                <input
+                  name="titulo"
+                  id="titulo"
+                  class="input"
+                  type="text"
+                  placeholder="titulo"
+                  required                      
+                />  
+                                 
+              </div>
+              <div class="input-container">
+                <label class="input-label" for="descripcion">Descripcion:</label>
+                <input 
+                name="descripcion" 
+                id="descripcion" 
+                class="input" 
+                type="text" 
+                placeholder="descripcion" 
+                max-width="100%" 
+                required 
+                />                                    
+              </div>
+
+              <div class="input-container">
+                <label class="input-label"  for="region">Region:</label> 
+                
+                <input 
+                  name="region"
+                  id="region"
+                  class="input"
+                  type="text"
+                  placeholder="region"
+                  max-width="100%"
+                  
+                  required                      
+                />  
+                                 
+              </div>
+
+              <div class="input-container">
+                <label class="input-label" for="ciudad">Ciudad:</label>            
+                <input
+                  name="ciudad"
+                  id="ciudad"
+                  class="input"
+                  type="text"
+                  placeholder="ciudad"
+                  required                      
+                />                                       
+              </div>
+
+              <div class="input-container">
+                <label class="input-label" for="provincia">Provincia:</label> 
+                
+                <input
+                  name="provincia"
+                  id="provincia"
+                  class="input"
+                  type="text"
+                  placeholder="provincia"
+                  required                      
+                />  
+                                 
+              </div>
+              <div class="input-container">
+                <label class="input-label" for="pais">País:</label> 
+                
+                <input
+                  name="pais"
+                  id="pais"
+                  class="input"
+                  type="text"
+                  placeholder="Argentina"
+                  required                      
+                />  
+                                 
+              </div>
+              <div class="input-container">
+                <label class="input-label" for="img_destino">Imagen url:</label> 
+                
+                <input
+                  name="img_destino"
+                  id="img_destino"
+                  class="input"
+                  type="text"
+                  placeholder="img_destino"
+                  required                      
+                />  
+                                 
+              </div>
+            <button type="submit" class="button">Editar Destino</button>
+            </form>
+            
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../js/editarDestino.js"></script>
+
+    
+</body>
+</html>

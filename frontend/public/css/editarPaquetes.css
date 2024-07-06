@@ -86,3 +86,25 @@ textarea{
     font-family: "Barlow Condensed";
     width: 30%;
 }
+
+/* Estilo para el select */
+select {
+    margin-top: 5px;
+    padding: 1%;
+}
+
+/* Estilo para las opciones */
+select option {
+    padding: 1%;
+}
+
+/* Estilo para el comportamiento desplegable */
+select {
+    position: relative;
+}
+
+select:focus {
+    outline: none;
+    /* box-shadow: 0 0 5px rgba(81, 203, 238, 1); */
+    /* border: 1px solid rgba(81, 203, 238, 1); */
+}

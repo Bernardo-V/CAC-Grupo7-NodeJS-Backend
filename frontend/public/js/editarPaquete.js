@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const formEditarPaquetes = document.querySelector("#formulario-editar-paquetes");
+    const opcionesIdDestino = document.querySelector("#id_destino");
 
     const servidorURL = "http://viaja2024.alwaysdata.net";
     //const servidorURL = "http://localhost:3001"
@@ -21,8 +22,30 @@ document.addEventListener("DOMContentLoaded", ()=>{
             document.querySelector("#precio").value = paquete.precio_paquete;
             document.querySelector("#dias").value = paquete.dias_paquete;
             document.querySelector("#destino").value = paquete.destino_paquete;
-            document.querySelector("#id_destino").value = paquete.id_destinos;
+            //document.querySelector("#id_destino").value = paquete.id_destinos;
 
+            const respuestaDestinos =  await axios.get(`${servidorURL}/destinos/`);
+            const destinos = respuestaDestinos.data;
+
+            opcionesIdDestino.innerHTML=``;
+
+         
+            destinos.forEach(destino=> {
+                const optionElement = document.createElement('option');
+                optionElement.value = destino.iddestinos;  
+                optionElement.textContent = destino.titulo_destino + ' - ' + destino.descripcion_destino;  
+                optionElement.classList.add('input');
+
+                if (paquete.id_destinos === destino.iddestinos){
+                    console.log("El paquete tiene asociado el id destino: " + paquete.id_destinos);
+                    optionElement.selected = true;
+                    document.querySelector("#id_destino").value = paquete.id_destinos;
+                    }
+
+                opcionesIdDestino.appendChild(optionElement);
+            })
+
+            
         } catch (error) {
             console.error("Error al editar el paquete", error)
         }
@@ -53,6 +76,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             //limpiar formulario
             formEditarPaquetes.reset();
             //alert o modal y regresar a listar paquetes
+            
             window.location.href = `/miperfil`;
         } catch (error) {
             console.error("Error al crear el paquete", error)
