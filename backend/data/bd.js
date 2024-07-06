@@ -4,6 +4,7 @@ require('dotenv').config();
 
  /*nombre de la base datos - user - contraseña - {donde esta alojada la bd?, lenguaje,puerto} */
  /* const db = new Sequelize ("viajar2024","root","Yanina_2023",{
+ /* const db = new Sequelize ("viajar2024","root","Yanina_2023",{
      host: "localhost",
      dialect: "mysql",
      port:3306
@@ -19,7 +20,7 @@ require('dotenv').config();
     host: process.env.DB_HOST,
     dialect: "mysql",
     port:3306
-})  */
+})*/
 
 module.exports = db
 

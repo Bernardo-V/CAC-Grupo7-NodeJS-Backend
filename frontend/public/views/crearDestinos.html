@@ -14,9 +14,9 @@
     <main class="container-editar-paquetes">
         <section class="card-editar-paquetes">
           <div class="barraTitulo"><a class="btnVolver" href="/miperfil">Volver</a>
-            <h1 class="card-titulo">Crear Paquete</h1>
+            <h1 class="card-titulo">Crear Destino</h1>
             </div>
-            <form action="#" class="formulario-editar-paquetes" id="formulario-crear-paquetes">
+            <form action="#" class="formulario-editar-paquetes" id="formulario-crear-destino">
                 <div class="input-container">
                     <label class="input-label" for="nombre">Titulo:</label> 
                     
@@ -32,18 +32,26 @@
                   </div>
                   <div class="input-container">
                     <label class="input-label" for="descripcion">Descripcion:</label>
-                    <textarea name="descripcion" id="descripcion" rows="8" width="100%" placeholder="descripcion" required></textarea>                                    
+                    <input 
+                    name="descripcion" 
+                    id="descripcion" 
+                    class="input" 
+                    type="text" 
+                    placeholder="descripcion" 
+                    max-width="100%" 
+                    required 
+                    />                                    
                   </div>
 
                   <div class="input-container">
-                    <label class="input-label"  for="imagen">Url imagen:</label> 
+                    <label class="input-label"  for="region">Region:</label> 
                     
                     <input 
-                      name="imagen"
-                      id="imagen"
+                      name="region"
+                      id="region"
                       class="input"
                       type="text"
-                      placeholder="URL imagen"
+                      placeholder="region"
                       max-width="100%"
                       
                       required                      
@@ -52,52 +60,57 @@
                   </div>
 
                   <div class="input-container">
-                    <label class="input-label" for="precio">Precio:</label>            
+                    <label class="input-label" for="ciudad">Ciudad:</label>            
                     <input
-                      name="precio"
-                      id="precio"
+                      name="ciudad"
+                      id="ciudad"
                       class="input"
                       type="text"
-                      placeholder="precio"
+                      placeholder="ciudad"
                       required                      
                     />                                       
                   </div>
 
                   <div class="input-container">
-                    <label class="input-label" for="dias">Días:</label> 
+                    <label class="input-label" for="provincia">Provincia:</label> 
                     
                     <input
-                      name="dias"
-                      id="dias"
+                      name="provincia"
+                      id="provincia"
                       class="input"
                       type="text"
-                      placeholder="4 días / 3 noches"
+                      placeholder="provincia"
                       required                      
                     />  
                                      
                   </div>
                   <div class="input-container">
-                    <label class="input-label" for="destino">Destino:</label> 
+                    <label class="input-label" for="pais">País:</label> 
                     
                     <input
-                      name="destino"
-                      id="destino"
+                      name="pais"
+                      id="pais"
                       class="input"
                       type="text"
-                      placeholder="Patagonia/ Norte/ Cuyo/ Litoral/ Centro"
+                      placeholder="Argentina"
                       required                      
                     />  
                                      
                   </div>
                   <div class="input-container">
-                    <label class="input-label" for="id_destino">ID destino:</label> 
-                    <select name="id_destino" id="id_destino" class="input"  placeholder="id_destino" required>
-                      <!-- Las opciones se cargarán aquí dinámicamente -->
-
-                    </select>
+                    <label class="input-label" for="img_destino">Imagen url:</label> 
+                    
+                    <input
+                      name="img_destino"
+                      id="img_destino"
+                      class="input"
+                      type="text"
+                      placeholder="img_destino"
+                      required                      
+                    />  
                                      
                   </div>
-                <button type="submit" class="button">Crear Paquete</button>
+                <button type="submit" class="button">Crear Destino</button>
                   
             </form>
             
@@ -108,7 +121,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- <script type="module" src="../js/paquetes.js"></script> -->
-    <script type="module" src="../js/crearPaquete.js"></script>
+    <script type="module" src="../js/crearDestino.js"></script>
 
     
 </body>

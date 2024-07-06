@@ -1,4 +1,5 @@
 
+
 // Función para decodificar el JWT
 function decodeJWT(token) {
     const base64Url = token.split('.')[1];
@@ -41,6 +42,7 @@ async function datosUsuario() {
                     document.getElementById('usuariosTableContainer').style.display = 'block';
                     document.getElementById('comentTableContainer').style.display = 'block';
                     document.getElementById('paquetesTableContainer').style.display = 'block';
+                    document.getElementById('destinosTableContainer').style.display = 'block';
                     verTodosUsu(idusuarios)
                 }
                 else {
@@ -200,8 +202,49 @@ async function verTodosUsu(usuarioActualId) {
                         data.titulo_paquete,
                         data.destino_paquete,
                         data.dias_paquete,
-                        `<div style="text-align: center;"><button class="btn btn-danger" style="text-align: end;" onclick="borrarPaquete(${data.idpaquetes})"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btn btn-primary" style="text-align: start;" onclick="editarPaquete(${data.idpaquetes})"><i class="fa-solid fa-pen-to-square"></i></button></div>`
+                        `<div style="text-align: center;">
+                        <button class="btn btn-primary" style="text-align: start;" onclick="editarPaquete(${data.idpaquetes})"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger" style="text-align: end; margin-left: 10px;" onclick="borrarPaquete(${data.idpaquetes})"><i class="fa-solid fa-trash"></i></button>
+                        </div>`
+                                              
+                    ]).draw(false);
+                });
+                
+                console.log(data)
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.error("Error en la solicitud:", xhr);
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: `/destinos/`,
+            contentType: "application/json",
+            success: function (data) {
+
+                if ($.fn.DataTable.isDataTable('#destinosTable')) {
+                    $('#destinosTable').DataTable().clear().destroy();
+                }
+                // Inicializar DataTable
+                const table = $('#destinosTable').DataTable({
+                    columnDefs: [
+                        { orderable: false, targets: -1 } // Deshabilitar el sorting en la última columna (Acciones)
+                    ]
+                });
+                // Limpiar cualquier dato previo en la tabla
+                table.clear();
+                // Rellenar la tabla con los datos obtenidos
+                data.forEach(data => {
+                    console.log("titulo: "+ data.titulo_destino);
+                    table.row.add([
+                        data.titulo_destino,
+                        data.descripcion_destino,
+                        data.ciudad,
+                        `<div style="text-align: center;">
+                        <button class="btn btn-primary" style="text-align: start;" onclick="editarDestino(${data.iddestinos})"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger" style="text-align: end; margin-left: 10px;" onclick="borrarDestino(${data.iddestinos})"><i class="fa-solid fa-trash"></i></button>
+                        </div>`
                                               
                     ]).draw(false);
                 });
@@ -235,7 +278,7 @@ function borrarUsuario(userId) {
 }
 
 
-// Función para borrar un usuario
+// Funciones para borrar y editar un paquete
 function borrarPaquete(id) {
     $.ajax({
         type: "DELETE",
@@ -254,6 +297,27 @@ function borrarPaquete(id) {
 
 function editarPaquete(id) {
     window.location.href = `../views/editarPaquetes.html?id=${id}`;
+}
+
+// Funciones para borrar y editar un destino
+function borrarDestino(id) {
+    $.ajax({
+        type: "DELETE",
+        url: `/destinos/${id}`,
+        success: function (data) {
+            alert('Destino borrado exitosamente');
+            datosUsuario(); // Actualizar la tabla después de borrar el destino
+        
+            
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.error("Error al borrar el destino:", xhr);
+        }
+    });
+}
+
+function editarDestino(id) {
+    window.location.href = `../views/editarDestinos.html?id=${id}`;
 }
 
 // Evento que se dispara al cargar la página

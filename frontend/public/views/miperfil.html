@@ -253,6 +253,16 @@
                                                             aria-controls="paquetes"
                                                             aria-selected="false">Paquetes</a>
                                                     </li>
+                                                    <li class="nav-item"
+                                                        role="presentation">
+                                                        <a class="nav-link"
+                                                            id="destinos-tab"
+                                                            data-toggle="tab"
+                                                            href="#destinos"
+                                                            role="tab"
+                                                            aria-controls="destinos"
+                                                            aria-selected="false">Destinos</a>
+                                                    </li>
                                                 </ul>
                                                 <!-- Tab panes -->
                                         <div class="tab-content">
@@ -309,6 +319,25 @@
                                                                     <th>Destino</th>
                                                                     <th>Dias</th>
                                                                     <th style="text-align: center;">Acciones <a class="buttonTable--crear" style="margin-left:15px" href="../views/crearPaquetes.html"> +Crear Nuevo</a></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- Las filas se añadirán dinámicamente aquí -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>  
+                                                </div>
+                                                <div class="tab-pane fade" id="destinos" role="tabpanel" aria-labelledby="destinos-tab">
+                                                    <div id="destinosTableContainer"
+                                                        style="display: none;">
+                                                        <table id="destinosTable"
+                                                            class="hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Destino</th>
+                                                                    <th>Descripcion destino</th>
+                                                                    <th>Ciudad</th>
+                                                                    <th style="text-align: center;">Acciones <a class="buttonTable--crear" style="margin-left:15px" href="../views/crearDestinos.html"> +Crear Nuevo</a></th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
