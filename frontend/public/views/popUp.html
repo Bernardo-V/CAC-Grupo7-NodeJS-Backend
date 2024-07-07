@@ -1,0 +1,43 @@
+<!-- popup.html -->
+<style>
+    /* Asegúrate de tener estos estilos en tu archivo CSS */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    background-color: #2d3187;
+    border-radius: 50% 20% / 10% 40%;
+}
+label {
+    color:white;
+}
+h1{
+    font-family: "Barlow Condensed";
+    color:red;
+}
+  .password-icon {
+        cursor: pointer;
+    }
+ </style>
+
+<div id="popup" class="popup" style="display: none;">
+    <div class="modal-body">
+        <h1 id="accionPopUp" class="text-center text-uppercase">Esta seguro de
+            borrar el Usuario</h1>
+        <form id="editUserForm">
+            <h3 id="nombreDelete"></h3>
+            <h3 id="apellidoDelete"></h3>
+            <input type="hidden" id="idUsuarioDelete" name="idUsuarioDelete">
+            <button type="button" id="accionBtn"
+                class="btn btn-primary" onclick="borrarUsuario()">Si</button>
+
+            <button type="button" class="btn btn-cancel"
+                onclick="closePopup()">No</button>
+        </form>
+    </div>
+</div>

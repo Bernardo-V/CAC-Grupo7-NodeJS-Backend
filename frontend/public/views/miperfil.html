@@ -27,7 +27,8 @@
         <!-- DataTables JS -->
         <script type="text/javascript" charset="utf8"
             src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-
+        <script
+            src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
         <!-- NAV-BAR  -->
         <script src="../js/nav-bar.js"></script>
         <!-- ESTILO GLOBAL CSS -->
@@ -38,6 +39,8 @@
 
         <!-- JAVS SCRIPT PROPIO  -->
         <script src="../js/miperfil.js"></script>
+        <script src="../js/crudUsuario.js"></script>
+        <script src="../js/popUp.js"></script>
         <!-- TITULO  -->
         <title>ViajAR</title>
         <style>
@@ -173,6 +176,8 @@
                                                 <input type="text"
                                                     class="form-control col-sm-3"
                                                     id="email" value>
+                                                    <div id="email-error"
+                                            class="error" style="color: red;"></div>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
@@ -199,7 +204,7 @@
                                         <br>
                                         <hr>
                                         <br>
-                                        <div id="boletoTableContainer"
+                                        <!-- <div id="boletoTableContainer"
                                                             >
                                                             <table id="boletosTable"
                                                                 class="hover">
@@ -214,7 +219,7 @@
                                                                 <tbody>
                                                                 </tbody>
                                                             </table>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                         <div class="row" id="vistaAdmin" style="display: none;">
@@ -275,6 +280,8 @@
                                                             <table id="usuariosTable"
                                                                 class="hover">
                                                                 <thead>
+                                                                    <button style="margin: 10px;" onclick="crearUsuario()" 
+                                                                    id="crearUsuarioBtn" class="btn btn-primary">Crear Usuario</button>
                                                                     <tr>
                                                                         <th>Nombre</th>
                                                                         <th>Apellido</th>

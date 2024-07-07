@@ -37,14 +37,14 @@ router.use(express.json()); // Middleware para parsear el cuerpo de la solicitud
         return res.status(404).json({ message: "Email existente" });
       }
       
-      // Asignar valor por defecto a superUsu si no está presente en el cuerpo de la solicitud
-    const { superUsu = 0, nombre, apellido, mail, password } = req.body;
-      
     if (req.body.password ) {
             const saltRounds = 5;
             const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
             req.body.password = hashedPassword;
-        }
+      }
+      // Asignar valor por defecto a superUsu si no está presente en el cuerpo de la solicitud
+    const { superUsu = 0, nombre, apellido, mail, password } = req.body;
+      
     const nuevoUsuario = await UserModel.create({
       nombre,
       apellido,

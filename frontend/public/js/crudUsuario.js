@@ -1,41 +1,4 @@
-
-
-    $(document).ready(function() {
-    $('#usuariosTable').DataTable({
-        columnDefs: [
-            { orderable: false, targets: -1 } // Deshabilitar el sorting en la última columna (Acciones)
-        ]
-    });
-    datosUsuario(); // Cargar datos del usuario al iniciar
-});
-
-
-   function closePopup() {
-        const popup = document.querySelector('#popup');
-    if (popup) {
-        popup.remove();
-    }
-}
-
-function saveUserData() {
-    // Aquí puedes manejar la lógica para guardar los datos del usuario
-    closePopup();
-}
-
-// Función para decodificar el JWT
-function decodeJWT(token) {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-}
-
-//***********************BORRAR DESDE ACA****************************************************** */
 // Función para obtener y mostrar datos del usuario
-/*
 async function datosUsuario() {
     try {
         // Obtener el JWT desde las cookies
@@ -43,11 +6,11 @@ async function datosUsuario() {
         // Decodificar el JWT para obtener los datos
         const decoded = decodeJWT(jwtCookie);
         // Obtener el idusuarios del JWT decodificado
-        const idusuarios = decoded.id;
+        const idusuario = decoded.id;
         // Realiza la petición GET al servidor
         $.ajax({
             type: "GET",
-            url: `/usuarios/${idusuarios}`,
+            url: `/usuarios/${idusuario}`,
             contentType: "application/json",
             success: function (data) {
                 // Actualizar los campos en el formulario con los datos obtenidos del servidor
@@ -58,20 +21,18 @@ async function datosUsuario() {
                 const email = document.getElementById('email');
                 email.value = data.mail;
                 const rol = data.superUsu;
-                console.log(rol)
-
                 if (rol === 1) {
-                    document.getElementById('boletoTableContainer').style.display = 'none';
+                    // document.getElementById('boletoTableContainer').style.display = 'none';
                     document.getElementById('vistaAdmin').style.display = 'block';
                     document.getElementById('usuariosTableContainer').style.display = 'block';
                     document.getElementById('comentTableContainer').style.display = 'block';
                     document.getElementById('paquetesTableContainer').style.display = 'block';
                     document.getElementById('destinosTableContainer').style.display = 'block';
-                    verTodosUsu(idusuarios)
-                }
-                else {
 
-                const table = $('#boletosTable').DataTable();
+                    verTodosUsu(idusuario)
+                }
+                else if(rol === 0){
+            /* const table = $('#boletosTable').DataTable();
                 // Limpiar cualquier dato previo en la tabla
                 table.clear();
                 // Rellenar la tabla con los datos obtenidos acá faltaria hacer un ajax para la vista de los paquetes que compro ese data.id usuarios
@@ -82,8 +43,7 @@ async function datosUsuario() {
                         data.mail,
                         `<button class="btn btn-danger" style="text-align: center;" onclick="borrarUsuario(${data.idusuarios})"><i class="fa-solid fa-trash"></i></button>`
                     ]).draw(false);
-                });
-
+                });*/
                 }
             },
             error: function (xhr, textStatus, errorThrown) {
@@ -104,17 +64,93 @@ async function updateUsuario() {
     const formData = {
         nombre: nombre,
         apellido: apellido,
-        email: email,
+        email: email
     };
      // Agregar nuevaContraseña al formData solo si no está vacío
     if (nuevaContraseña.trim() !== '') {
         formData.password = nuevaContraseña;
     }
 
-    // Llama a la función que realiza la solicitud PUT
-    await enviarDatos(formData);
+    try {
+        const { response, dataResponse } = await enviarDatos(formData);
+        if (response.ok) {
+            alert('Los datos fueron actualizados exitosamente.');
+            location.reload(); // Recargar la página actual
+        } else {
+          if (response.status = 409) {
+            if (dataResponse.message === "Email ya existe en la base de datos") {
+                $("#email-error").text(dataResponse.message);
+                }
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        }
+        }
+    } catch (error) {
+        console.error('Error al actualizar usuario:', error.message);
+    }
 }
 
+async function postUsuario() {
+                const nombre = document.querySelector('#nombrePopUp').value;
+                const apellido = document.querySelector('#apellidoPopUp').value;
+                const email = document.querySelector('#emailPopUp').value;
+                const password = document.querySelector('#passwordPopUp').value;
+                // Verificar si algún campo está vacío
+                if (nombre === '' || apellido === '' || email === '' || password === '') {
+                    alert('DEBE COMPLETAR TODOS LOS CAMPOS');
+                    return; // Salir de la función si algún campo está vacío
+                }
+                const formData = {
+                nombre: nombre,
+                apellido: apellido,
+                mail: email,
+                password:password
+                };
+    // Realiza la petición POST al servidor
+            $.ajax({
+                type: "POST",
+                url: "/usuarios/",
+                contentType: "application/json",
+                data: JSON.stringify(formData),
+                success: function(data) {
+                    // Maneja la respuesta del servidor
+                    console.log("Respuesta del servidor:", data);
+                    alert('usuario Creado');
+                    location.reload(); // Recargar la página actual
+                },
+              error: function (xhr, textStatus, errorThrown) {
+                  console.error("Error en la solicitud:", xhr);
+                    if (xhr.status === 404) {
+                        $("#email-error").text("El usuario ya está registrado");
+                        alert('El email ya está registrado"')
+                        
+                    } else {
+                        // Maneja otros errores posibles
+                        alert("Error en el registro. Por favor, inténtelo de nuevo.");
+                    }
+                }
+            });
+}
+
+function crearUsuario(){
+     fetch('../views/popUpUsuario.html')
+            .then(response => response.text())
+            .then(html => {
+                // Insertar el contenido del popup en el DOM
+                document.body.insertAdjacentHTML('beforeend', html);
+                
+                const titulo = document.getElementById('accionForm');
+                titulo.textContent = 'Crear Usuario';
+                 var accionBtn = document.getElementById('accionBtn');
+                accionBtn.textContent = 'Crear';
+                accionBtn.setAttribute('onclick', 'postUsuario()');
+                // Mostrar el popup
+                const popup = document.querySelector('#popup');
+                popup.style.display = 'block';
+            })
+        .catch(error => console.error('Error al cargar popupUsuario.html', error));
+}
 async function enviarDatos(formData) {
     try {
         const requestOptions = {
@@ -124,7 +160,6 @@ async function enviarDatos(formData) {
             },
             body: JSON.stringify(formData)
         };
-
         // Si no hay nuevaContraseña en formData, elimina esa propiedad del cuerpo de la solicitud
         if (!formData.hasOwnProperty('nuevaContraseña')) {
             delete requestOptions.body.nuevaContraseña;
@@ -134,22 +169,40 @@ async function enviarDatos(formData) {
         // Decodificar el JWT para obtener los datos
         const decoded = decodeJWT(jwtCookie);
         // Obtener el idusuarios del JWT decodificado
-        const idusuario= decoded.id;
-
-        const response = await fetch(`/usuarios/${idusuario}`, requestOptions);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+        const idusuario = decoded.id;
+        
+        // Agregar el ID del usuario al formData si no está presente
+        if (!formData.id) {
+            formData.id = idusuario;
         }
+        const response = await fetch(`/usuarios/${formData.id}`, requestOptions);
+        const dataResponse = await response.json();
 
-        const data = await response.json();
-        console.log('Respuesta del servidor:', data);
+        return { response, dataResponse }; // Devolver la respuesta y los datos de la respuesta
+
+        // if (response.status = 409) {
+        //     if (dataResponse.message === "DNI ya existe en la base de datos") {
+        //         console.log(dataResponse.message);
+        //         $("#dni-error").text(dataResponse.message);
+        //         } else if (dataResponse.message === "Email ya existe en la base de datos") {
+        //         $("#email-error").text(dataResponse.message);
+        //         }
+        //     if (!response.ok) {
+        //         throw new Error(`HTTP error! Status: ${response.status}`);
+        //     }
+        //      // Si la actualización fue exitosa, mostrar una alerta y recargar la página
+        // if (response.ok) {
+        //     alert('Los datos fueron actualizados exitosamente.');
+        //     location.reload(); // Recargar la página actual
+        // }
+        // }
     } catch (error) {
         console.error('Error al enviar datos al servidor:', error);
     }
 }
 
-// VER TODOS LOS USUARIOS SIENDO ADMIN 
+
+// VER TODOS LOS USUARIOS SIENDO ADMIN o SUPER ADMIN
 async function verTodosUsu(usuarioActualId) {
     try {
         $.ajax({
@@ -167,11 +220,10 @@ async function verTodosUsu(usuarioActualId) {
                         data.nombre,
                         data.apellido,
                         data.mail,
-                        `<button class="btn btn-danger" style="text-align: center;" onclick="borrarUsuario(${data.idusuarios})"><i class="fa-solid fa-trash"></i></button>`
+                         `<button class="btn btn-danger" style="text-align: center;" onclick="PopUpDelete('${data.nombre}', '${data.apellido}', ${data.idusuarios})"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-sucess" style="text-align: center;" onclick="editarUsuario('${data.nombre}', '${data.apellido}', '${data.mail}', ${data.idusuarios})"><i class="fa-solid fa-pen"></i></button>`
                     ]).draw(false);
                 });
-                
-                console.log(data)
             },
             error: function (xhr, textStatus, errorThrown) {
                 console.error("Error en la solicitud:", xhr);
@@ -196,12 +248,12 @@ async function verTodosUsu(usuarioActualId) {
                     ]).draw(false);
                 });
                 
-                console.log(data)
             },
             error: function (xhr, textStatus, errorThrown) {
                 console.error("Error en la solicitud:", xhr);
             }
         });
+        //DESDE ACA INSERT PAQUETES Y DESTINOS
         $.ajax({
             type: "GET",
             url: `/paquetes/`,
@@ -279,28 +331,15 @@ async function verTodosUsu(usuarioActualId) {
                 console.error("Error en la solicitud:", xhr);
             }
         });
+        // HASTA ACÁ INSERT PAQUETES Y DESTINOS
+
 
     } catch (error) {
     console.error('Error al obtener los datos del usuario:');
   }
 }
 
-
-// Función para borrar un usuario
-function borrarUsuario(userId) {
-    $.ajax({
-        type: "DELETE",
-        url: `/usuarios/${userId}`,
-        success: function () {
-            alert('Usuario borrado exitosamente');
-            datosUsuario(); // Actualizar la tabla después de borrar el usuario
-        },
-        error: function (xhr, textStatus, errorThrown) {
-            console.error("Error al borrar el usuario:", xhr);
-        }
-    });
-}
-
+//*******************INSERT PAQUETES Y DESTINOS***********************
 
 // Funciones para borrar y editar un paquete
 function borrarPaquete(id) {
@@ -343,60 +382,52 @@ function borrarDestino(id) {
 function editarDestino(id) {
     window.location.href = `../views/editarDestinos.html?id=${id}`;
 }
-*/
-//***********************BORRAR HASTA ACA*******************************************************/
+//*******************FIN INSERT PAQUETES Y DESTINOS***********************
+
 
 // Función para borrar un usuario
-function PopUpDelete(nombre,apellido,id) {
+function borrarUsuario(userId) {
 
-    fetch('../views/popUp.html')
-             .then(response => response.text())
-             .then(html => {
-                 // Insertar el contenido del popup en el DOM
-                 document.body.insertAdjacentHTML('beforeend', html);
-                  const nom = document.getElementById('nombreDelete');
-                 nom.textContent = nombre + ' ' + apellido;
-                 // document.querySelector('#nombreDelete').value = nombre;
-                 // document.querySelector('#apellidoDelete').value = apellido;
-                 document.querySelector('#idUsuarioDelete').value = id;
-                 // Mostrar el popup
-                 const popup = document.querySelector('#popup');
-                 popup.style.display = 'block';
-             })
-         .catch(error => console.error('Error al cargar popup.html', error));
- 
- }
-// Evento que se dispara al cargar la página
-window.addEventListener("load", function() {
+    const idUsuario = document.querySelector('#idUsuarioDelete').value;
+    console.log(idUsuario);
+    $.ajax({
+        type: "DELETE",
+        url: `/usuarios/${idUsuario}`,
+        success: function () {
+            alert('Usuario borrado exitosamente');
+            location.reload(); // Recargar la página actual
+            datosUsuario(); // Actualizar la tabla después de borrar el usuario
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.error("Error al borrar el usuario:", xhr);
+        }
+    });
+}
 
-            // icono para mostrar contraseña
-            showPassword = document.querySelector('.show-password');
-            showPassword.addEventListener('click', () => {
+// funcion para editar datos de un usuario
+function editarUsuario(nombre,apellido,email,id) {
+     fetch('../views/popUpUsuario.html')
+            .then(response => response.text())
+            .then(html => {
+                // Insertar el contenido del popup en el DOM
+                // console.log(nombre + apellido + email + id + dni)
 
-                // elementos input de tipo clave
-                password1 = document.querySelector('.password1');
+                document.body.insertAdjacentHTML('beforeend', html);
 
-                if ( password1.type === "text" ) {
-                    password1.type = "password"
-                    password2.type = "password"
-                    showPassword.classList.remove('fa-eye-slash');
-                } else {
-                    password1.type = "text"
-                    password2.type = "text"
-                    showPassword.classList.toggle("fa-eye-slash");
-                }
+                document.querySelector('#nombrePopUp').value = nombre;
+                document.querySelector('#apellidoPopUp').value = apellido;
+                document.querySelector('#emailPopUp').value = email;
+                document.querySelector('#idUsuarioPopUp').value = id;
+                const titulo = document.getElementById('accionForm');
+                titulo.textContent = 'Editar Usuario';
+                var accionBtn = document.getElementById('accionBtn');
+                accionBtn.textContent = 'Guardar';
+                accionBtn.setAttribute('onclick', 'updateUsuarioFromPopup()');
 
-                  passwordPopUp = document.getElementById('showPasswordPopUp');
-                if ( passwordPopUp.type === "text" ) {
-                    passwordPopUp.type = "password"
-                    showPassword.classList.remove('fa-eye-slash');
-                } else {
-                    passwordPopUp.type = "text"
-                    showPassword.classList.toggle("fa-eye-slash");
-                }
+                updateUsuarioFromPopup
+                // Mostrar el popup
+                const popup = document.querySelector('#popup');
+                popup.style.display = 'block';
             })
-
-
-});
-
-
+        .catch(error => console.error('Error al cargar popupUsuario.html', error));
+}
