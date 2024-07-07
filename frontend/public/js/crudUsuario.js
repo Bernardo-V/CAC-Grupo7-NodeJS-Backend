@@ -26,6 +26,9 @@ async function datosUsuario() {
                     document.getElementById('vistaAdmin').style.display = 'block';
                     document.getElementById('usuariosTableContainer').style.display = 'block';
                     document.getElementById('comentTableContainer').style.display = 'block';
+                    document.getElementById('paquetesTableContainer').style.display = 'block';
+                    document.getElementById('destinosTableContainer').style.display = 'block';
+
                     verTodosUsu(idusuario)
                 }
                 else if(rol === 0){

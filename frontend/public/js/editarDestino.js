@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     console.log("DOMContentLoaded: editarDestino.js cargado correctamente");
 
-    const servidorURL = "http://viaja2024.alwaysdata.net";
-    //const servidorURL = "http://localhost:3001"
+    //const servidorURL = "http://viaja2024.alwaysdata.net";
+    const servidorURL = "http://localhost:3001"
 
     const parametrosURL = new URLSearchParams(window.location.search);
     const idDestino =parametrosURL.get("id");
