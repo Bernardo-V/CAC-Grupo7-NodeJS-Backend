@@ -8,7 +8,7 @@ async function updateUsuarioFromPopup() {
     const formData = {
         nombre: nombre,
         apellido: apellido,
-        email: email,
+        mail: email,
         id:id
     };
     // Agregar nuevaContraseña al formData solo si no está vacía

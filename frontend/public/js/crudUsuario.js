@@ -424,7 +424,7 @@ function editarUsuario(nombre,apellido,email,id) {
                 accionBtn.textContent = 'Guardar';
                 accionBtn.setAttribute('onclick', 'updateUsuarioFromPopup()');
 
-                updateUsuarioFromPopup
+                //updateUsuarioFromPopup
                 // Mostrar el popup
                 const popup = document.querySelector('#popup');
                 popup.style.display = 'block';
