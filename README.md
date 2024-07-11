@@ -3,8 +3,8 @@
 Integrantes del proyecto:
 
 >Mendez Carolina
->Velazquez Bernardo Andrés
->Tiribelli Yanina
+Velazquez Bernardo Andrés
+Tiribelli Yanina
 
 # Sitio web:
 
