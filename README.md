@@ -2,9 +2,9 @@
 
 Integrantes del proyecto:
 
->Mendez Carolina
-Velazquez Bernardo Andrés
-Tiribelli Yanina
+-Mendez Carolina
+-Velazquez Bernardo Andrés
+-Tiribelli Yanina
 
 # Sitio web:
 
